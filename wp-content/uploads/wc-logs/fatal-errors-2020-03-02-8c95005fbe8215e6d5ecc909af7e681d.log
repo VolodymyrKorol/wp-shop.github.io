@@ -1,0 +1,4 @@
+2020-03-02T14:20:59+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ',' or ')' в D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\functions.php на строке 75
+
+2020-03-02T14:31:09+00:00 CRITICAL syntax error, unexpected 'customizer_init' (T_STRING) в D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\functions.php на строке 65
+

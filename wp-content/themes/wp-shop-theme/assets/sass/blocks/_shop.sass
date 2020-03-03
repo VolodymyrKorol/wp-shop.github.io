@@ -1,0 +1,56 @@
+.shop
+  margin-top: 135px
+  &-wrap
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+  &__item:hover
+    border: 4px solid $f-brown
+  &__item
+    border: 4px solid #fff
+    text-align: center
+    padding: 25px 20px
+    background: #f5f6f7
+    max-width: 320px
+    flex: 1
+    box-sizing: border-box
+    margin-bottom: 75px
+  &__item-properties
+    display: flex
+    justify-content: space-between
+
+  &__item-size p
+    font-size: 16px
+    text-transform: uppercase
+    font-weight: bold
+  &__item-color
+    display: flex
+  &__item-price
+    font-weight: bold
+  &__item-color>span
+    margin: 0px 5px 0px 0px
+    height: 20px
+    width: 20px
+    border-radius: 50%
+  &__item-color>span:first-child
+    background-color: #165eb9
+  &__item-color>span:nth-child(2)
+    background-color: #ffe637
+  &__item-color>span:last-child
+    background-color: #535253
+  &__item-img
+    height: 285px
+    width: 230px
+    margin: 0 auto
+    display: flex
+    align-items: center
+    justify-content: center
+  &__item-content
+    display: flex
+    justify-content: space-between
+  &__item-title a
+    text-decoration: none
+    color: $f-brown
+    text-transform: uppercase
+
+

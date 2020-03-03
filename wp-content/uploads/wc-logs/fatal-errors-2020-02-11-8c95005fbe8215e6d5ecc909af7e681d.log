@@ -1,0 +1,37 @@
+2020-02-11T14:37:01+00:00 CRITICAL require(): Failed opening required 'http://wp-shop/wp-content/themes/wp-shop-theme/sections/shop.php' (include_path='.') в D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\index.php на строке 9
+
+2020-02-11T14:39:20+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\index.php:12
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include()
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#2 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#3 {main}
+  thrown в D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\index.php на строке 12
+
+2020-02-11T15:25:51+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on null in D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\templates\loop\price.php:25
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(249): include()
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1284): wc_get_template('loop/price.php')
+#2 D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\index.php(33): woocommerce_template_loop_price()
+#3 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include('D:\\programFiles...')
+#4 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#5 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#6 {main}
+  thrown в D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\templates\loop\price.php на строке 25
+
+2020-02-11T19:57:24+00:00 CRITICAL Uncaught Error: Call to undefined function get_post_id() in D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\index.php:25
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include()
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#2 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#3 {main}
+  thrown в D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\index.php на строке 25
+
+2020-02-11T19:57:50+00:00 CRITICAL Uncaught Error: Call to undefined function get_post_ID() in D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\index.php:25
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include()
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#2 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#3 {main}
+  thrown в D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\index.php на строке 25
+

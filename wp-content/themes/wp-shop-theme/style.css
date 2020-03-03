@@ -11,42 +11,50 @@ body {
 /*-----------Interface--------------------*/
 /*-----------colors--------------------*/
 .content-container {
-  max-width: 1150px;
+  max-width: 1100px;
   margin: 0 auto; }
 
 /*-----------Grid--------------------*/
 .header {
-  background: #fff url("http://wp-shop/wp-content/uploads/2020/02/background.jpg") center 0px no-repeat;
+  background: #fff url("http://wp-shop/wp-content/uploads/2020/03/low-angle-shot-of-a-person-climbing-the-snow.jpg") center 0px no-repeat;
   -webkit-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
+  .header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); }
 
-.nav-bar-wrap {
-  display: flex;
-  justify-content: space-between; }
-
-.nav-bar__logo {
-  margin-top: 40px; }
-
-.nav-bar__menu {
-  display: flex;
-  justify-content: space-between;
-  align-content: center; }
-
-.nav-bar__menu-container {
-  display: flex; }
-  .nav-bar__menu-container li {
-    margin: 40px 25px 0px 25px;
-    list-style: none; }
-    .nav-bar__menu-container li a {
-      color: #fff;
-      text-decoration: none; }
-
-.nav-bar__menu-basket {
-  margin-top: 40px; }
+.nav-bar {
+  position: relative; }
+  .nav-bar-wrap {
+    display: flex;
+    justify-content: space-between; }
+  .nav-bar__logo {
+    margin-top: 30px; }
+  .nav-bar__menu {
+    display: flex;
+    justify-content: space-between;
+    align-content: center; }
+  .nav-bar__menu-container {
+    display: flex; }
+    .nav-bar__menu-container li {
+      margin: 40px 25px 40px 25px;
+      list-style: none; }
+      .nav-bar__menu-container li a {
+        color: #fff;
+        text-decoration: none; }
+  .nav-bar__menu-basket {
+    margin-top: 40px; }
 
 .hero {
   padding-top: 230px;
-  padding-bottom: 270px; }
+  padding-bottom: 270px;
+  position: relative; }
   .hero__header {
     color: #fff;
     margin: 0 auto;
@@ -62,11 +70,15 @@ body {
     max-width: 600px; }
 
 .arrow {
+  position: relative;
   text-align: center;
   padding-bottom: 50px; }
   .arrow__img {
     width: 36px;
     height: 25px; }
+
+.header-page {
+  background: #aa9b77; }
 
 /*-----------Interface--------------------*/
 .filter {
@@ -161,5 +173,88 @@ body {
   border: 2px solid #aa9b77; }
 
 /*-----------Sidebar-top--------------------*/
+.shop {
+  margin-top: 135px; }
+  .shop-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+  .shop__item:hover {
+    border: 4px solid #aa9b77; }
+  .shop__item {
+    border: 4px solid #fff;
+    text-align: center;
+    padding: 25px 20px;
+    background: #f5f6f7;
+    max-width: 320px;
+    flex: 1;
+    box-sizing: border-box;
+    margin-bottom: 75px; }
+  .shop__item-properties {
+    display: flex;
+    justify-content: space-between; }
+  .shop__item-size p {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold; }
+  .shop__item-color {
+    display: flex; }
+  .shop__item-price {
+    font-weight: bold; }
+  .shop__item-color > span {
+    margin: 0px 5px 0px 0px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%; }
+  .shop__item-color > span:first-child {
+    background-color: #165eb9; }
+  .shop__item-color > span:nth-child(2) {
+    background-color: #ffe637; }
+  .shop__item-color > span:last-child {
+    background-color: #535253; }
+  .shop__item-img {
+    height: 285px;
+    width: 230px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .shop__item-content {
+    display: flex;
+    justify-content: space-between; }
+  .shop__item-title a {
+    text-decoration: none;
+    color: #aa9b77;
+    text-transform: uppercase; }
+
+/*-----------Shop--------------------*/
+.carousel {
+  margin: 10px auto;
+  max-width: 1100px; }
+  .carousel-item {
+    width: 100%;
+    height: 70vh;
+    background-color: #78787c; }
+  .carousel__slide-item {
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover; }
+  .carousel__blackout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .carousel .page-title {
+    display: block;
+    margin: 0 auto;
+    margin-top: calc(35vh - 25px);
+    text-align: center;
+    color: #fff;
+    font-size: 50px; }
+
+/*-----------Page Slider--------------------*/
 
 /*# sourceMappingURL=style.css.map */
