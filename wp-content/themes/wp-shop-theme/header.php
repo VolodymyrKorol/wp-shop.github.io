@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
 </head>
 <body>
-
+<div class="dark_layout"></div>
 <header class="header">
     <div class="nav-bar">
         <div class="content-container">
@@ -25,6 +25,9 @@
                     ] );
                     ?>
                     <div class="nav-bar__menu-basket"><img src="<?php echo get_template_directory_uri() . '/assets/img/header/basket.svg' ?>" alt=""></div>
+                   <div class="burger">
+                       <span></span>
+                   </div>
                 </div>
             </div>
         </div>

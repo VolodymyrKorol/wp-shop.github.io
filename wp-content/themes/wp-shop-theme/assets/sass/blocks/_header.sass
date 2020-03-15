@@ -18,12 +18,36 @@
     justify-content: space-between
   &__logo
     margin-top: 30px
+    margin-bottom: 30px
   &__menu
     display: flex
     justify-content: space-between
-    align-content: center
+    align-items: center
+  .burger span:before
+    transform: translateY(-4px)
+  .burger span:after
+    transform: translateY(4px)
+
+  .burger span, .burger span::after, .burger span::before
+    content: ''
+    display: block
+    background-color: $f-black
+    height: 2px
+    width: 16px
+    position: absolute
+    top: calc(50% - 1px)
+    left: calc(50% - 8px)
+  .burger
+    display: none
+    position: relative
+    width: 40px
+    height: 40px
+    background-color: $f-white
+    border-radius: 50%
+
   &__menu-container
     display: flex
+    margin: 0px
     li
       margin: 40px 25px 40px 25px
       list-style: none
@@ -31,7 +55,6 @@
         color: #fff
         text-decoration: none
   &__menu-basket
-    margin-top: 40px
 
 .hero
   padding-top: 230px
@@ -66,3 +89,50 @@
   color: $f-white
 .nav-bar__menu-container li.current_page_item a
   color: $f-brown
+
+.nav-bar__menu-container.burger-menu__opened
+  right: 0px
+
+
+
+
+@media (max-width: 768px)
+  .nav-bar
+    .burger
+      display: block
+      position: absolute
+      top: 30px
+      right: 20px
+      z-index: 12
+  .nav-bar__menu-container
+    background-color: $f-black
+    position: fixed
+    top: 0px
+    padding-left: 20px
+    padding-top: 125px
+    right: -100%
+    height: 100vh
+    z-index: 10
+    transition: 0.3s
+    flex-direction: column
+    box-shadow: -15px 0px 52px -35px white
+  .nav-bar__menu-basket
+    position: absolute
+    right: 80px
+    top: 38px
+    z-index: 12
+  .dark_layout
+    background-color: rgba(0,0,0,0)
+    transition: 0.2s
+  .dark_layout-active
+    background-color: rgba(0,0,0,0.5)
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    width: 100%
+    height: 150vh
+
+@media (max-width: 1150px)
+  .nav-bar-wrap
+    padding: 0px 30px

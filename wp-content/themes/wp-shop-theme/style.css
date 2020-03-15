@@ -38,21 +38,41 @@ body {
     display: flex;
     justify-content: space-between; }
   .nav-bar__logo {
-    margin-top: 30px; }
+    margin-top: 30px;
+    margin-bottom: 30px; }
   .nav-bar__menu {
     display: flex;
     justify-content: space-between;
-    align-content: center; }
+    align-items: center; }
+  .nav-bar .burger span:before {
+    transform: translateY(-4px); }
+  .nav-bar .burger span:after {
+    transform: translateY(4px); }
+  .nav-bar .burger span, .nav-bar .burger span::after, .nav-bar .burger span::before {
+    content: '';
+    display: block;
+    background-color: #333333;
+    height: 2px;
+    width: 16px;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: calc(50% - 8px); }
+  .nav-bar .burger {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%; }
   .nav-bar__menu-container {
-    display: flex; }
+    display: flex;
+    margin: 0px; }
     .nav-bar__menu-container li {
       margin: 40px 25px 40px 25px;
       list-style: none; }
       .nav-bar__menu-container li a {
         color: #fff;
         text-decoration: none; }
-  .nav-bar__menu-basket {
-    margin-top: 40px; }
 
 .hero {
   padding-top: 230px;
@@ -92,6 +112,49 @@ body {
 .nav-bar__menu-container li.current_page_item a {
   color: #aa9b77; }
 
+.nav-bar__menu-container.burger-menu__opened {
+  right: 0px; }
+
+@media (max-width: 768px) {
+  .nav-bar .burger {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 12; }
+  .nav-bar__menu-container {
+    background-color: #333333;
+    position: fixed;
+    top: 0px;
+    padding-left: 20px;
+    padding-top: 125px;
+    right: -100%;
+    height: 100vh;
+    z-index: 10;
+    transition: 0.3s;
+    flex-direction: column;
+    box-shadow: -15px 0px 52px -35px white; }
+  .nav-bar__menu-basket {
+    position: absolute;
+    right: 80px;
+    top: 38px;
+    z-index: 12; }
+  .dark_layout {
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.2s; }
+  .dark_layout-active {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 150vh; } }
+
+@media (max-width: 1150px) {
+  .nav-bar-wrap {
+    padding: 0px 30px; } }
+
 /*-----------Interface--------------------*/
 .filter {
   background-color: #f5f6f7; }
@@ -112,11 +175,11 @@ body {
     border: none; }
   .filter__category {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    flex-wrap: wrap; }
   .filter__category-item {
     margin-right: 40px;
-    display: flex;
-    align-items: center; }
+    display: flex; }
     .filter__category-item label {
       font-size: 18px;
       text-transform: uppercase;
@@ -202,7 +265,8 @@ body {
 
 /*-----------Shop--------------------*/
 .carousel {
-  margin: 0px auto; }
+  margin: 0px auto;
+  box-shadow: 1px 0px 9px 1px rgba(0, 0, 0, 0.75); }
   .carousel-item {
     width: 100%;
     height: 77vh;
@@ -296,6 +360,11 @@ body {
   .sidebar {
     min-width: 350px; } }
 
+@media (max-width: 768px) {
+  .sidebar {
+    max-width: 100%;
+    margin-right: 15px; } }
+
 /*-----------Page Sidebar--------------------*/
 .product-container {
   display: flex;
@@ -321,11 +390,14 @@ body {
 .page-item {
   flex: 1; }
 
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column; } }
+
 /*-----------Page Product panel--------------------*/
 .footer {
   background-color: #333333; }
   .footer-container {
-    height: 200px;
     display: flex;
     justify-content: space-between; }
   .footer-info {
@@ -362,6 +434,23 @@ body {
     .footer-menu h1 {
       font-size: 18px;
       color: #fff; }
+
+@media (max-width: 1150px) {
+  .footer-container {
+    padding: 0px 30px; } }
+
+@media (max-width: 768px) {
+  .footer-info {
+    margin-right: 30px; }
+  .footer #menu-header-menu-1 {
+    flex-direction: column; }
+    .footer #menu-header-menu-1 li:last-child {
+      border: none; }
+    .footer #menu-header-menu-1 li {
+      border-right: none;
+      border-bottom: 1px solid #aa9b77;
+      padding-top: 5px;
+      padding-bottom: 5px; } }
 
 /*-----------Main footer--------------------*/
 

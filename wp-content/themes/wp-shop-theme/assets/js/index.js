@@ -26,3 +26,19 @@ jQuery('.img-arrow').on('click', (e)=>{
     jQuery('.img-arrow[data-order="'+order+'"]').toggleClass('img-arrow-active');
 
 })
+
+/**
+ *Бургер меню
+ */
+var opened = true
+jQuery('.burger').on('click',(e)=>{
+    jQuery('.nav-bar__menu-container').toggleClass('burger-menu__opened')
+    jQuery('.dark_layout').toggleClass('dark_layout-active')
+    if(opened) {
+        jQuery("html,body").css("overflow", "hidden");
+        opened = !opened
+    }else {
+        jQuery("html,body").css("overflow", "scroll");
+        opened = !opened
+    }
+})

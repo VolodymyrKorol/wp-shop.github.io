@@ -1,7 +1,6 @@
 .footer
   background-color: $f-black
   &-container
-    height: 200px
     display: flex
     justify-content: space-between
   &-info
@@ -39,3 +38,21 @@
     h1
       font-size: 18px
       color: $f-white
+
+
+@media (max-width: 1150px)
+  .footer-container
+    padding: 0px 30px
+@media (max-width: 768px)
+  .footer
+    &-info
+      margin-right: 30px
+    #menu-header-menu-1
+      flex-direction: column
+      li:last-child
+        border: none
+      li
+        border-right: none
+        border-bottom: 1px solid $f-brown
+        padding-top: 5px
+        padding-bottom: 5px
