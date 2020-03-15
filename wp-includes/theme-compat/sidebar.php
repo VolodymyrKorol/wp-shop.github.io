@@ -18,7 +18,7 @@ _deprecated_file(
 	<div id="sidebar" role="complementary">
 		<ul>
 			<?php
-			/* Widgetized sidebar, if you have the plugin installed. */
+			/* Widgetized sidebars, if you have the plugin installed. */
 			if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar() ) :
 				?>
 			<li>

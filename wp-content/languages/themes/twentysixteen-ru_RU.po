@@ -16,7 +16,7 @@ msgid "Twenty Sixteen"
 msgstr "Twenty Sixteen"
 
 #. Description of the theme
-msgid "Twenty Sixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Twenty Sixteen will make your WordPress look beautiful everywhere."
+msgid "Twenty Sixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebars that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Twenty Sixteen will make your WordPress look beautiful everywhere."
 msgstr "Twenty Sixteen — современная версия популярного дизайна для WordPress. Горизонтальный заголовок с дополнительной правой панелью идеально подходит для блогов и сайтов. В теме есть произвольная настройка цветов с красивыми встроенными схемами и гармоничная растяжимая сетка с ориентацией на мобильные устройства, внимание уделено даже мельчайшим деталям. С Twenty Sixteen ваш сайт будет прекрасно выглядеть на любых экранах."
 
 #: functions.php:202
@@ -109,7 +109,7 @@ msgid "Footer Primary Menu"
 msgstr "Основное меню подвала"
 
 #: functions.php:267
-msgid "Add widgets here to appear in your sidebar."
+msgid "Add widgets here to appear in your sidebars."
 msgstr "Добавьте сюда виджеты, которые вы хотите разместить в боковой колонке."
 
 #: template-parts/content.php:14

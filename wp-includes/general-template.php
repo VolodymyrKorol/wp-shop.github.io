@@ -77,36 +77,36 @@ function get_footer( $name = null ) {
 }
 
 /**
- * Load sidebar template.
+ * Load sidebars template.
  *
- * Includes the sidebar template for a theme or if a name is specified then a
- * specialised sidebar will be included.
+ * Includes the sidebars template for a theme or if a name is specified then a
+ * specialised sidebars will be included.
  *
- * For the parameter, if the file is called "sidebar-special.php" then specify
+ * For the parameter, if the file is called "sidebars-special.php" then specify
  * "special".
  *
  * @since 1.5.0
  *
- * @param string $name The name of the specialised sidebar.
+ * @param string $name The name of the specialised sidebars.
  */
 function get_sidebar( $name = null ) {
 	/**
-	 * Fires before the sidebar template file is loaded.
+	 * Fires before the sidebars template file is loaded.
 	 *
 	 * @since 2.2.0
 	 * @since 2.8.0 $name parameter added.
 	 *
-	 * @param string|null $name Name of the specific sidebar file to use. null for the default sidebar.
+	 * @param string|null $name Name of the specific sidebars file to use. null for the default sidebars.
 	 */
 	do_action( 'get_sidebar', $name );
 
 	$templates = array();
 	$name      = (string) $name;
 	if ( '' !== $name ) {
-		$templates[] = "sidebar-{$name}.php";
+		$templates[] = "sidebars-{$name}.php";
 	}
 
-	$templates[] = 'sidebar.php';
+	$templates[] = 'sidebars.php';
 
 	locate_template( $templates, true );
 }
@@ -178,7 +178,7 @@ function get_template_part( $slug, $name = null ) {
  * it. The filter is {@see 'get_search_form'}.
  *
  * This function is primarily used by themes which want to hardcode the search
- * form into the sidebar and also by the search widget in WordPress.
+ * form into the sidebars and also by the search widget in WordPress.
  *
  * There is also an action that is called whenever the function is run called,
  * {@see 'pre_get_search_form'}. This can be useful for outputting JavaScript that the
@@ -633,7 +633,7 @@ function wp_register( $before = '<li>', $after = '</li>', $echo = true ) {
  */
 function wp_meta() {
 	/**
-	 * Fires before displaying echoed content in the sidebar.
+	 * Fires before displaying echoed content in the sidebars.
 	 *
 	 * @since 1.5.0
 	 */

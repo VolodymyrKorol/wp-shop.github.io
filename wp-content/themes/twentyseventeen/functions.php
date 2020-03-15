@@ -131,20 +131,20 @@ function twentyseventeen_setup() {
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(
 		'widgets'     => array(
-			// Place three core-defined widgets in the sidebar area.
-			'sidebar-1' => array(
+			// Place three core-defined widgets in the sidebars area.
+			'sidebars-1' => array(
 				'text_business_info',
 				'search',
 				'text_about',
 			),
 
 			// Add the core-defined business info widget to the footer 1 area.
-			'sidebar-2' => array(
+			'sidebars-2' => array(
 				'text_business_info',
 			),
 
 			// Put two core-defined widgets in the footer 2 area.
-			'sidebar-3' => array(
+			'sidebars-3' => array(
 				'text_about',
 				'search',
 			),
@@ -261,8 +261,8 @@ function twentyseventeen_content_width() {
 		}
 	}
 
-	// Check if is single post and there is no sidebar.
-	if ( is_single() && ! is_active_sidebar( 'sidebar-1' ) ) {
+	// Check if is single post and there is no sidebars.
+	if ( is_single() && ! is_active_sidebar( 'sidebars-1' ) ) {
 		$content_width = 740;
 	}
 
@@ -336,8 +336,8 @@ function twentyseventeen_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'Blog Sidebar', 'twentyseventeen' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'twentyseventeen' ),
+			'id'            => 'sidebars-1',
+			'description'   => __( 'Add widgets here to appear in your sidebars on blog posts and archive pages.', 'twentyseventeen' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -348,7 +348,7 @@ function twentyseventeen_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer 1', 'twentyseventeen' ),
-			'id'            => 'sidebar-2',
+			'id'            => 'sidebars-2',
 			'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -360,7 +360,7 @@ function twentyseventeen_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer 2', 'twentyseventeen' ),
-			'id'            => 'sidebar-3',
+			'id'            => 'sidebars-3',
 			'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -533,7 +533,7 @@ function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
 		$sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
 	}
 
-	if ( is_active_sidebar( 'sidebar-1' ) || is_archive() || is_search() || is_home() || is_page() ) {
+	if ( is_active_sidebar( 'sidebars-1' ) || is_archive() || is_search() || is_home() || is_page() ) {
 		if ( ! ( is_page() && 'one-column' === get_theme_mod( 'page_options' ) ) && 767 <= $width ) {
 			$sizes = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
 		}

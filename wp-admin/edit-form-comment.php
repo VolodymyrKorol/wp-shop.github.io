@@ -168,7 +168,7 @@ endif;
 
 <?php
 	/**
-	 * Filters miscellaneous actions for the edit comment form sidebar.
+	 * Filters miscellaneous actions for the edit comment form sidebars.
 	 *
 	 * @since 4.3.0
 	 *

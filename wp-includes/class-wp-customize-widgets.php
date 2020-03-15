@@ -382,7 +382,7 @@ final class WP_Customize_Widgets {
 
 		/*
 		 * Register a setting for all widgets, including those which are active,
-		 * inactive, and orphaned since a widget may get suppressed from a sidebar
+		 * inactive, and orphaned since a widget may get suppressed from a sidebars
 		 * via a plugin (like Widget Visibility).
 		 */
 		foreach ( array_keys( $wp_registered_widgets ) as $widget_id ) {
@@ -431,7 +431,7 @@ final class WP_Customize_Widgets {
 			$is_inactive_widgets   = ( 'wp_inactive_widgets' === $sidebar_id );
 			$is_active_sidebar     = ( $is_registered_sidebar && ! $is_inactive_widgets );
 
-			// Add setting for managing the sidebar's widgets.
+			// Add setting for managing the sidebars's widgets.
 			if ( $is_registered_sidebar || $is_inactive_widgets ) {
 				$setting_id   = sprintf( 'sidebars_widgets[%s]', $sidebar_id );
 				$setting_args = $this->get_setting_args( $setting_id );
@@ -444,7 +444,7 @@ final class WP_Customize_Widgets {
 				$new_setting_ids[] = $setting_id;
 
 				// Add section to contain controls.
-				$section_id = sprintf( 'sidebar-widgets-%s', $sidebar_id );
+				$section_id = sprintf( 'sidebars-widgets-%s', $sidebar_id );
 				if ( $is_active_sidebar ) {
 
 					$section_args = array(
@@ -456,7 +456,7 @@ final class WP_Customize_Widgets {
 					);
 
 					/**
-					 * Filters Customizer widget section arguments for a given sidebar.
+					 * Filters Customizer widget section arguments for a given sidebars.
 					 *
 					 * @since 3.9.0
 					 *
@@ -484,7 +484,7 @@ final class WP_Customize_Widgets {
 				}
 			}
 
-			// Add a control for each active widget (located in a sidebar).
+			// Add a control for each active widget (located in a sidebars).
 			foreach ( $sidebar_widget_ids as $i => $widget_id ) {
 
 				// Skip widgets that may have gone away due to a plugin being deactivated.
@@ -708,8 +708,8 @@ final class WP_Customize_Widgets {
 			'<div class="move-widget-area">
 				<p class="description">{description}</p>
 				<ul class="widget-area-select">
-					<% _.each( sidebars, function ( sidebar ){ %>
-						<li class="" data-id="<%- sidebar.id %>" title="<%- sidebar.description %>" tabindex="0"><%- sidebar.name %></li>
+					<% _.each( sidebars, function ( sidebars ){ %>
+						<li class="" data-id="<%- sidebars.id %>" title="<%- sidebars.description %>" tabindex="0"><%- sidebars.name %></li>
 					<% }); %>
 				</ul>
 				<div class="move-widget-actions">
@@ -911,7 +911,7 @@ final class WP_Customize_Widgets {
 	}
 
 	/**
-	 * Ensures sidebar widget arrays only ever contain widget IDS.
+	 * Ensures sidebars widget arrays only ever contain widget IDS.
 	 *
 	 * Used as the 'sanitize_callback' for each $sidebars_widgets setting.
 	 *
@@ -1121,7 +1121,7 @@ final class WP_Customize_Widgets {
 	 *
 	 * @since 3.9.0
 	 *
-	 * @param array $sidebars_widgets List of widgets for the current sidebar.
+	 * @param array $sidebars_widgets List of widgets for the current sidebars.
 	 * @return array
 	 */
 	public function preview_sidebars_widgets( $sidebars_widgets ) {
@@ -1224,12 +1224,12 @@ final class WP_Customize_Widgets {
 	}
 
 	/**
-	 * Determines if a sidebar is rendered on the page.
+	 * Determines if a sidebars is rendered on the page.
 	 *
 	 * @since 4.0.0
 	 *
 	 * @param string $sidebar_id Sidebar ID to check.
-	 * @return bool Whether the sidebar is rendered.
+	 * @return bool Whether the sidebars is rendered.
 	 */
 	public function is_sidebar_rendered( $sidebar_id ) {
 		return in_array( $sidebar_id, $this->rendered_sidebars );
@@ -1239,14 +1239,14 @@ final class WP_Customize_Widgets {
 	 * Tallies the sidebars rendered via is_active_sidebar().
 	 *
 	 * Keep track of the times that is_active_sidebar() is called in the template,
-	 * and assume that this means that the sidebar would be rendered on the template
+	 * and assume that this means that the sidebars would be rendered on the template
 	 * if there were widgets populating it.
 	 *
 	 * @since 3.9.0
 	 *
-	 * @param bool   $is_active  Whether the sidebar is active.
+	 * @param bool   $is_active  Whether the sidebars is active.
 	 * @param string $sidebar_id Sidebar ID.
-	 * @return bool Whether the sidebar is active.
+	 * @return bool Whether the sidebars is active.
 	 */
 	public function tally_sidebars_via_is_active_sidebar_calls( $is_active, $sidebar_id ) {
 		if ( is_registered_sidebar( $sidebar_id ) ) {
@@ -1255,7 +1255,7 @@ final class WP_Customize_Widgets {
 		/*
 		 * We may need to force this to true, and also force-true the value
 		 * for 'dynamic_sidebar_has_widgets' if we want to ensure that there
-		 * is an area to drop widgets into, if the sidebar is empty.
+		 * is an area to drop widgets into, if the sidebars is empty.
 		 */
 		return $is_active;
 	}
@@ -1264,14 +1264,14 @@ final class WP_Customize_Widgets {
 	 * Tallies the sidebars rendered via dynamic_sidebar().
 	 *
 	 * Keep track of the times that dynamic_sidebar() is called in the template,
-	 * and assume this means the sidebar would be rendered on the template if
+	 * and assume this means the sidebars would be rendered on the template if
 	 * there were widgets populating it.
 	 *
 	 * @since 3.9.0
 	 *
-	 * @param bool   $has_widgets Whether the current sidebar has widgets.
+	 * @param bool   $has_widgets Whether the current sidebars has widgets.
 	 * @param string $sidebar_id  Sidebar ID.
-	 * @return bool Whether the current sidebar has widgets.
+	 * @return bool Whether the current sidebars has widgets.
 	 */
 	public function tally_sidebars_via_dynamic_sidebar_calls( $has_widgets, $sidebar_id ) {
 		if ( is_registered_sidebar( $sidebar_id ) ) {
@@ -1281,7 +1281,7 @@ final class WP_Customize_Widgets {
 		/*
 		 * We may need to force this to true, and also force-true the value
 		 * for 'is_active_sidebar' if we want to ensure there is an area to
-		 * drop widgets into, if the sidebar is empty.
+		 * drop widgets into, if the sidebars is empty.
 		 */
 		return $has_widgets;
 	}
@@ -1366,7 +1366,7 @@ final class WP_Customize_Widgets {
 	 * Strips out widget IDs for widgets which are no longer registered.
 	 *
 	 * One example where this might happen is when a plugin orphans a widget
-	 * in a sidebar upon deactivation.
+	 * in a sidebars upon deactivation.
 	 *
 	 * @since 3.9.0
 	 *
@@ -1630,7 +1630,7 @@ final class WP_Customize_Widgets {
 	 * @since 4.5.0
 	 *
 	 * @param array $params {
-	 *     Dynamic sidebar params.
+	 *     Dynamic sidebars params.
 	 *
 	 *     @type array $args        Sidebar args.
 	 *     @type array $widget_args Widget args.
@@ -1648,7 +1648,7 @@ final class WP_Customize_Widgets {
 			$params[0]
 		);
 
-		// Skip widgets not in a registered sidebar or ones which lack a proper wrapper element to attach the data-* attributes to.
+		// Skip widgets not in a registered sidebars or ones which lack a proper wrapper element to attach the data-* attributes to.
 		$matches  = array();
 		$is_valid = (
 			isset( $sidebar_args['id'] )
@@ -1727,9 +1727,9 @@ final class WP_Customize_Widgets {
 	}
 
 	/**
-	 * Keep track of the number of times that dynamic_sidebar() was called for a given sidebar index.
+	 * Keep track of the number of times that dynamic_sidebar() was called for a given sidebars index.
 	 *
-	 * This helps facilitate the uncommon scenario where a single sidebar is rendered multiple times on a template.
+	 * This helps facilitate the uncommon scenario where a single sidebars is rendered multiple times on a template.
 	 *
 	 * @since 4.5.0
 	 * @var array
@@ -1745,7 +1745,7 @@ final class WP_Customize_Widgets {
 	protected $context_sidebar_instance_number;
 
 	/**
-	 * Current sidebar ID being rendered.
+	 * Current sidebars ID being rendered.
 	 *
 	 * @since 4.5.0
 	 * @var array
@@ -1753,13 +1753,13 @@ final class WP_Customize_Widgets {
 	protected $current_dynamic_sidebar_id_stack = array();
 
 	/**
-	 * Begins keeping track of the current sidebar being rendered.
+	 * Begins keeping track of the current sidebars being rendered.
 	 *
-	 * Insert marker before widgets are rendered in a dynamic sidebar.
+	 * Insert marker before widgets are rendered in a dynamic sidebars.
 	 *
 	 * @since 4.5.0
 	 *
-	 * @param int|string $index Index, name, or ID of the dynamic sidebar.
+	 * @param int|string $index Index, name, or ID of the dynamic sidebars.
 	 */
 	public function start_dynamic_sidebar( $index ) {
 		array_unshift( $this->current_dynamic_sidebar_id_stack, $index );
@@ -1773,13 +1773,13 @@ final class WP_Customize_Widgets {
 	}
 
 	/**
-	 * Finishes keeping track of the current sidebar being rendered.
+	 * Finishes keeping track of the current sidebars being rendered.
 	 *
-	 * Inserts a marker after widgets are rendered in a dynamic sidebar.
+	 * Inserts a marker after widgets are rendered in a dynamic sidebars.
 	 *
 	 * @since 4.5.0
 	 *
-	 * @param int|string $index Index, name, or ID of the dynamic sidebar.
+	 * @param int|string $index Index, name, or ID of the dynamic sidebars.
 	 */
 	public function end_dynamic_sidebar( $index ) {
 		array_shift( $this->current_dynamic_sidebar_id_stack );
@@ -1789,7 +1789,7 @@ final class WP_Customize_Widgets {
 	}
 
 	/**
-	 * Current sidebar being rendered.
+	 * Current sidebars being rendered.
 	 *
 	 * @since 4.5.0
 	 * @var string|null
@@ -1805,7 +1805,7 @@ final class WP_Customize_Widgets {
 	protected $rendering_sidebar_id;
 
 	/**
-	 * Filters sidebars_widgets to ensure the currently-rendered widget is the only widget in the current sidebar.
+	 * Filters sidebars_widgets to ensure the currently-rendered widget is the only widget in the current sidebars.
 	 *
 	 * @since 4.5.0
 	 *
@@ -1818,7 +1818,7 @@ final class WP_Customize_Widgets {
 	}
 
 	/**
-	 * Renders a specific widget using the supplied sidebar arguments.
+	 * Renders a specific widget using the supplied sidebars arguments.
 	 *
 	 * @since 4.5.0
 	 *
@@ -1828,7 +1828,7 @@ final class WP_Customize_Widgets {
 	 * @param array                $context {
 	 *     Sidebar args supplied as container context.
 	 *
-	 *     @type string $sidebar_id              ID for sidebar for widget to render into.
+	 *     @type string $sidebar_id              ID for sidebars for widget to render into.
 	 *     @type int    $sidebar_instance_number Disambiguating instance number.
 	 * }
 	 * @return string|false
@@ -1850,7 +1850,7 @@ final class WP_Customize_Widgets {
 			$this->context_sidebar_instance_number = intval( $context['sidebar_instance_number'] );
 		}
 
-		// Filter sidebars_widgets so that only the queried widget is in the sidebar.
+		// Filter sidebars_widgets so that only the queried widget is in the sidebars.
 		$this->rendering_widget_id = $widget_id;
 
 		$filter_callback = array( $this, 'filter_sidebars_widgets_for_rendering_widget' );

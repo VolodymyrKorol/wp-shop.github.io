@@ -71,7 +71,7 @@ class WC_Report_Sales_By_Category extends WC_Admin_Report {
 	}
 
 	/**
-	 * Get the legend for the main chart sidebar.
+	 * Get the legend for the main chart sidebars.
 	 *
 	 * @return array
 	 */

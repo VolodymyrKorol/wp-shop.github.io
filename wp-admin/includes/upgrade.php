@@ -446,12 +446,12 @@ Commenter avatars come from <a href="https://gravatar.com">Gravatar</a>.'
 			'sidebars_widgets',
 			array(
 				'wp_inactive_widgets' => array(),
-				'sidebar-1'           => array(
+				'sidebars-1'           => array(
 					0 => 'search-2',
 					1 => 'recent-posts-2',
 					2 => 'recent-comments-2',
 				),
-				'sidebar-2'           => array(
+				'sidebars-2'           => array(
 					0 => 'archives-2',
 					1 => 'categories-2',
 					2 => 'meta-2',
@@ -3053,7 +3053,7 @@ function make_site_theme_from_default( $theme_name, $template ) {
 	$default_dir = WP_CONTENT_DIR . '/themes/' . WP_DEFAULT_THEME;
 
 	// Copy files from the default theme to the site theme.
-	//$files = array('index.php', 'comments.php', 'comments-popup.php', 'footer.php', 'header.php', 'sidebar.php', 'style.css');
+	//$files = array('index.php', 'comments.php', 'comments-popup.php', 'footer.php', 'header.php', 'sidebars.php', 'style.css');
 
 	$theme_dir = @opendir( $default_dir );
 	if ( $theme_dir ) {

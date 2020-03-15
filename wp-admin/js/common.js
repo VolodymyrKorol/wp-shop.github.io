@@ -1285,7 +1285,7 @@ $document.ready( function() {
 
 			$( '#wp-admin-bar-menu-toggle a' ).attr( 'aria-expanded', 'false' );
 
-			// Toggle sidebar when toggle is clicked.
+			// Toggle sidebars when toggle is clicked.
 			$( '#wp-admin-bar-menu-toggle' ).on( 'click.wp-responsive', function( event ) {
 				event.preventDefault();
 

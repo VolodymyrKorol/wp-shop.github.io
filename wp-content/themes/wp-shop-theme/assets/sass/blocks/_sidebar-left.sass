@@ -1,0 +1,73 @@
+.sidebar
+  max-width: 350px
+  background-color: #fff
+  box-shadow: 0px 0px 4px -1px rgba(0,0,0,0.75)
+  margin: 25px 0px 0px 15px
+  &-container
+    position: relative
+    padding: 10px
+  &-item
+    border-bottom: 1px solid #d2d2d2
+    &__title
+      padding: 10px
+      display: flex
+      justify-content: space-between
+      p
+        margin: 0
+    &__content
+      max-height: 0px
+      transition: 1s
+      overflow: hidden
+    &__content-row
+      display: flex
+      justify-content: space-between
+      padding: 0px 25px 30px 10px
+      p input
+        width: 50px
+        border: none
+        border-bottom: 1px solid #d2d2d2
+      p span
+        color: #ccc
+    .img-arrow
+      transform: rotate(0deg)
+      transition: 0.3s
+      &-active
+        transform: rotate(-90deg)
+  &-item-opened
+    max-height: 500px
+  .all-items:hover
+    background-color: #8a7b61
+  .all-items
+    margin: 0 auto
+    display: block
+    border: none
+    background-color: $f-brown
+    padding: 10px 20px 16px 20px
+    color: $f-white
+    margin-top: 10px
+    font-size: 22px
+    border-radius: 6px
+
+
+
+.range-input
+  -webkit-appearance: none
+  background: $f-brown
+  height: 4px
+  width: 98%
+.range-input::-webkit-slider-thumb
+  -webkit-appearance: none
+  width: 20px
+  height: 20px
+  background-color: #ffffff
+  border-radius: 50%
+  border: 1px solid $f-brown
+
+
+@media (min-width: 1400px)
+  .sidebar
+    min-width: 350px
+
+
+
+

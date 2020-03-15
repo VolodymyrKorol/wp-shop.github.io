@@ -25,14 +25,24 @@ function styleConnect()
 function theme_register_sidebar()
 {
     register_sidebar(array(
-        'name' => 'Top sidebar',
+        'name' => 'Top sidebars',
         'id' => "top_sidebar",
-        'description' => 'Top sidebar categories',
+        'description' => 'Top sidebars categories',
         'class' => '',
         'before_widget' => '<div class="widget %2$s">',
         'after_widget' => "</div>\n",
         'before_title' => '<h4 class="widgettitle">',
         'after_title' => "</h4>\n",
+    ));
+    register_sidebar(array(
+        'name' => 'Footer sidebars',
+        'id' => "footer_sidebar",
+        'description' => 'Footer sidebars categories',
+        'class' => '',
+        'before_widget' => '',
+        'after_widget' => "",
+        'before_title' => '',
+        'after_title' => "",
     ));
 }
 
@@ -160,6 +170,47 @@ function customizer_init( WP_Customize_Manager $wp_customize )
                 'settings' => $setting,
                 'section' => $section
             ]));
+    }
+
+
+    //Секция футера
+
+    if ($section = 'display_footer_options') {
+        $wp_customize->add_section($section, [
+            'title' => 'Footer',
+            'priority' => 200,                   // приоритет расположения
+            'description' => 'Внешний вид подвала', // описание не обязательное
+        ]);
+
+        // настройка
+        $setting = 'display_footer_info_title';
+
+        $wp_customize->add_setting($setting, [
+            'default' => '',
+            'transport' => $transport
+        ]);
+
+        $wp_customize->add_control($setting, [
+            'section' => $section,
+            'label' => 'Footer information title',
+            'type' => 'text',
+        ]);
+
+        // настройка
+        $setting = 'display_footer_textarea';
+
+        $wp_customize->add_setting($setting, [
+            'default' => '',
+            'transport' => $transport
+        ]);
+
+        $wp_customize->add_control($setting, [
+            'section' => $section,
+            'label' => 'Footer information',
+            'type' => 'textarea',
+        ]);
+
+
     }
 }
 

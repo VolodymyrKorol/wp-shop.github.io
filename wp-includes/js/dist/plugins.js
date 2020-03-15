@@ -412,17 +412,17 @@ var plugins = {};
  * 		el(
  * 			PluginSidebarMoreMenuItem,
  * 			{
- * 				target: 'sidebar-name',
+ * 				target: 'sidebars-name',
  * 			},
  * 			'My Sidebar'
  * 		),
  * 		el(
  * 			PluginSidebar,
  * 			{
- * 				name: 'sidebar-name',
+ * 				name: 'sidebars-name',
  * 				title: 'My Sidebar',
  * 			},
- * 			'Content of the sidebar'
+ * 			'Content of the sidebars'
  * 		)
  * 	);
  * }
@@ -441,15 +441,15 @@ var plugins = {};
  * const Component = () => (
  * 	<>
  * 		<PluginSidebarMoreMenuItem
- * 			target="sidebar-name"
+ * 			target="sidebars-name"
  * 		>
  * 			My Sidebar
  * 		</PluginSidebarMoreMenuItem>
  * 		<PluginSidebar
- * 			name="sidebar-name"
+ * 			name="sidebars-name"
  * 			title="My Sidebar"
  * 		>
- * 			Content of the sidebar
+ * 			Content of the sidebars
  * 		</PluginSidebar>
  * 	</>
  * );

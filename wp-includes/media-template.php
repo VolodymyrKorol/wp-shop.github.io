@@ -582,7 +582,7 @@ function wp_print_media_templates() {
 		} #>
 	</script>
 
-	<?php // Template for the Attachment details, used for example in the sidebar. ?>
+	<?php // Template for the Attachment details, used for example in the sidebars. ?>
 	<script type="text/html" id="tmpl-attachment-details">
 		<h2>
 			<?php _e( 'Attachment Details' ); ?>
@@ -702,7 +702,7 @@ function wp_print_media_templates() {
 		<div class="selection-view"></div>
 	</script>
 
-	<?php // Template for the Attachment display settings, used for example in the sidebar. ?>
+	<?php // Template for the Attachment display settings, used for example in the sidebars. ?>
 	<script type="text/html" id="tmpl-attachment-display-settings">
 		<h2><?php _e( 'Attachment Display Settings' ); ?></h2>
 
@@ -816,7 +816,7 @@ function wp_print_media_templates() {
 		<# } #>
 	</script>
 
-	<?php // Template for the Gallery settings, used for example in the sidebar. ?>
+	<?php // Template for the Gallery settings, used for example in the sidebars. ?>
 	<script type="text/html" id="tmpl-gallery-settings">
 		<h2><?php _e( 'Gallery Settings' ); ?></h2>
 
@@ -891,7 +891,7 @@ function wp_print_media_templates() {
 		</span>
 	</script>
 
-	<?php // Template for the Playlists settings, used for example in the sidebar. ?>
+	<?php // Template for the Playlists settings, used for example in the sidebars. ?>
 	<script type="text/html" id="tmpl-playlist-settings">
 		<h2><?php _e( 'Playlist Settings' ); ?></h2>
 

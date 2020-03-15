@@ -1421,7 +1421,7 @@ msgid "URL Slug"
 msgstr "Ярлык URL"
 
 #: wp-includes/js/dist/edit-post.js:2887
-msgid "You’ll find more settings for your page and blocks in the sidebar. Click the cog icon to toggle the sidebar open and closed."
+msgid "You’ll find more settings for your page and blocks in the sidebars. Click the cog icon to toggle the sidebars open and closed."
 msgstr "На боковой панели доступно больше настроек для вашей страницы и блоков. Нажмите на значок со стрелкой для открытия или закрытия боковой панели."
 
 #: wp-includes/js/dist/edit-post.js:2649
@@ -1903,7 +1903,7 @@ msgstr "Обнаружено несовпадение значений ключ�
 msgid "Block (selected)"
 msgstr "Блок (выбран)"
 
-#. translators: ARIA label for the Document sidebar tab, selected.
+#. translators: ARIA label for the Document sidebars tab, selected.
 #: wp-includes/js/dist/edit-post.js:4606
 msgid "Document (selected)"
 msgstr "Документ (выбран)"
@@ -3053,7 +3053,7 @@ msgid "Hide Block Settings"
 msgstr "Скрыть параметры блока"
 
 #: wp-includes/js/dist/edit-post.js:2990
-msgid "Additional settings are now available in the Editor block settings sidebar"
+msgid "Additional settings are now available in the Editor block settings sidebars"
 msgstr "Дополнительные настройки теперь доступны на боковой панели расширенных настроек"
 
 #: wp-includes/js/dist/edit-post.js:2988
@@ -3072,7 +3072,7 @@ msgstr "Редактор кода"
 msgid "Editor settings"
 msgstr "Настройки редактора"
 
-#. translators: ARIA label for the Document sidebar tab, not selected.
+#. translators: ARIA label for the Document sidebars tab, not selected.
 #: wp-includes/js/dist/edit-post.js:4607 wp-includes/js/dist/edit-post.js:4626
 #: wp-includes/js/dist/edit-post.js:4627
 msgid "Document"
@@ -3234,7 +3234,7 @@ msgid "Open the block navigation menu."
 msgstr "Откроет меню навигации по блокам."
 
 #: wp-includes/js/dist/edit-post.js:3245
-msgid "Show or hide the settings sidebar."
+msgid "Show or hide the settings sidebars."
 msgstr "Показать или скрыть боковую панель настроек."
 
 #: wp-includes/js/dist/edit-post.js:3242
@@ -5149,7 +5149,7 @@ msgid "Could not open handle for %1$s to %2$s."
 msgstr "Не удалось открыть дескриптор для %1$s к %2$s."
 
 #: wp-includes/widgets/class-wp-nav-menu-widget.php:26
-msgid "Add a navigation menu to your sidebar."
+msgid "Add a navigation menu to your sidebars."
 msgstr "Добавить меню навигации на боковую панель."
 
 #. translators: %s: Display name of the user who has taken over the changeset
@@ -5979,7 +5979,7 @@ msgstr "Новое меню"
 
 #. translators: URL to the Widgets panel of the Customizer.
 #: wp-includes/class-wp-customize-nav-menus.php:633
-msgid "If your theme has widget areas, you can also add menus there. Visit the <a href=\"%s\">Widgets panel</a> and add a &#8220;Navigation Menu widget&#8221; to display a menu in a sidebar or footer."
+msgid "If your theme has widget areas, you can also add menus there. Visit the <a href=\"%s\">Widgets panel</a> and add a &#8220;Navigation Menu widget&#8221; to display a menu in a sidebars or footer."
 msgstr "Если используемая тема имеет области виджетов, то вы можете также добавить туда меню. Зайдите на <a href=\"%s\">панель управления виджетами</a> и добавьте &#8220;Виджет меню навигации&#8221;, чтобы отображать меню на боковой панели или в подвале."
 
 #: wp-includes/class-wp-customize-nav-menus.php:454
@@ -10607,7 +10607,7 @@ msgstr "https://codex.wordpress.org/Заглавная_страница"
 #. translators: 1: The 'id' argument, 2: Sidebar name, 3: Recommended 'id'
 #. value.
 #: wp-includes/widgets.php:282
-msgid "No %1$s was set in the arguments array for the \"%2$s\" sidebar. Defaulting to \"%3$s\". Manually set the %1$s to \"%3$s\" to silence this notice and keep existing sidebar content."
+msgid "No %1$s was set in the arguments array for the \"%2$s\" sidebars. Defaulting to \"%3$s\". Manually set the %1$s to \"%3$s\" to silence this notice and keep existing sidebars content."
 msgstr "В массиве аргументов для боковой колонки «%2$s» не задан параметр %1$s. Присвоенное по умолчанию значение равно «%3$s». Чтобы убрать это сообщение и сохранить текущее содержимое боковой колонки, задайте вручную параметр %1$s, равный «%3$s»."
 
 #: wp-includes/script-loader.php:1895

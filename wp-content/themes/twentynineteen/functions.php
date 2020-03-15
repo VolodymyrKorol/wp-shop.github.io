@@ -188,7 +188,7 @@ function twentynineteen_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'Footer', 'twentynineteen' ),
-			'id'            => 'sidebar-1',
+			'id'            => 'sidebars-1',
 			'description'   => __( 'Add widgets here to appear in your footer.', 'twentynineteen' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',

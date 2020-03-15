@@ -1,0 +1,4 @@
+2020-03-11T19:14:21+00:00 CRITICAL Maximum execution time of 60 seconds exceeded в D:\programFiles\OSPanel\domains\wp-shop\wp-includes\widgets\class-wp-widget-links.php на строке 17
+
+2020-03-11T19:15:08+00:00 CRITICAL Maximum execution time of 60 seconds exceeded в D:\programFiles\OSPanel\domains\wp-shop\wp-includes\widgets\class-wp-widget-media-audio.php на строке 18
+

@@ -45,7 +45,7 @@ window.wpWidgets = {
 			isRTL = !! ( 'undefined' !== typeof isRtl && isRtl );
 
 		// Handle the widgets containers in the right column.
-		$( '#widgets-right .sidebar-name' )
+		$( '#widgets-right .sidebars-name' )
 			/*
 			 * Toggle the widgets containers when clicked and update the toggle
 			 * button `aria-expanded` attribute value.
@@ -115,7 +115,7 @@ window.wpWidgets = {
 		});
 
 		// Handle the widgets containers in the left column.
-		$( '#widgets-left .sidebar-name' ).click( function() {
+		$( '#widgets-left .sidebars-name' ).click( function() {
 			var $wrap = $( this ).closest( '.widgets-holder-wrap' );
 
 			$wrap
@@ -306,7 +306,7 @@ window.wpWidgets = {
 
 				if ( ! $wrap.hasClass('closed') ) {
 					// Lock all open sidebars min-height when starting to drag.
-					// Prevents jumping when dragging a widget from an open sidebar to a closed sidebar below.
+					// Prevents jumping when dragging a widget from an open sidebars to a closed sidebars below.
 					height = ui.item.hasClass('ui-draggable') ? $this.height() : 1 + $this.height();
 					$this.css( 'min-height', height + 'px' );
 				}
@@ -317,7 +317,7 @@ window.wpWidgets = {
 					$widget = ui.item,
 					id = the_id;
 
-				// Reset the var to hold a previously closed sidebar.
+				// Reset the var to hold a previously closed sidebars.
 				wpWidgets.hoveredSidebar = null;
 
 				if ( $widget.hasClass('deleting') ) {
@@ -399,9 +399,9 @@ window.wpWidgets = {
 					return;
 				}
 
-				// If the last widget was moved out of an orphaned sidebar, close and remove it.
+				// If the last widget was moved out of an orphaned sidebars, close and remove it.
 				if ( $sender.attr('id').indexOf('orphaned_widgets') > -1 && ! $sender.children('.widget').length ) {
-					$sender.parents('.orphan-sidebar').slideUp( 400, function(){ $(this).remove(); } );
+					$sender.parents('.orphan-sidebars').slideUp( 400, function(){ $(this).remove(); } );
 				}
 			}
 		}).sortable( 'option', 'connectWith', 'div.widgets-sortables' );
@@ -434,8 +434,8 @@ window.wpWidgets = {
 		// Area Chooser
 		$( '#widgets-right .widgets-holder-wrap' ).each( function( index, element ) {
 			var $element = $( element ),
-				name = $element.find( '.sidebar-name h2' ).text(),
-				ariaLabel = $element.find( '.sidebar-name' ).data( 'add-to' ),
+				name = $element.find( '.sidebars-name h2' ).text(),
+				ariaLabel = $element.find( '.sidebars-name' ).data( 'add-to' ),
 				id = $element.find( '.widgets-sortables' ).attr( 'id' ),
 				li = $( '<li>' ),
 				button = $( '<button>', {
@@ -695,10 +695,10 @@ window.wpWidgets = {
 		$document.trigger( 'widget-added', [ widget ] );
 
 		/*
-		 * Check if any part of the sidebar is visible in the viewport. If it is, don't scroll.
-		 * Otherwise, scroll up to so the sidebar is in view.
+		 * Check if any part of the sidebars is visible in the viewport. If it is, don't scroll.
+		 * Otherwise, scroll up to so the sidebars is in view.
 		 *
-		 * We do this by comparing the top and bottom, of the sidebar so see if they are within
+		 * We do this by comparing the top and bottom, of the sidebars so see if they are within
 		 * the bounds of the viewport.
 		 */
 		viewportTop = $(window).scrollTop();

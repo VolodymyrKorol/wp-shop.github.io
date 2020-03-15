@@ -998,7 +998,7 @@ var modern = (function (domGlobals) {
               type: 'container',
               name: name,
               layout: 'stack',
-              classes: 'sidebar-panel',
+              classes: 'sidebars-panel',
               html: ''
             });
             container.prepend(panel);
@@ -1035,7 +1035,7 @@ var modern = (function (domGlobals) {
         items: [{
             type: 'toolbar',
             layout: 'stack',
-            classes: 'sidebar-toolbar',
+            classes: 'sidebars-toolbar',
             items: buttons
           }]
       };

@@ -3608,7 +3608,7 @@ function __experimentalConvertBlockToReusable(clientIds) {
 }
 /**
  * Returns an action object used in signalling that the user has enabled the
- * publish sidebar.
+ * publish sidebars.
  *
  * @return {Object} Action object
  */
@@ -3620,7 +3620,7 @@ function enablePublishSidebar() {
 }
 /**
  * Returns an action object used in signalling that the user has disabled the
- * publish sidebar.
+ * publish sidebars.
  *
  * @return {Object} Action object
  */
@@ -10231,7 +10231,7 @@ function (_Component) {
   Object(createClass["a" /* default */])(PostPublishPanel, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      // Automatically collapse the publish sidebar when a post
+      // Automatically collapse the publish sidebars when a post
       // is published and the user makes an edit.
       if (prevProps.isPublished && !this.props.isSaving && this.props.isDirty) {
         this.props.onClose();

@@ -2309,7 +2309,7 @@ msgstr "<a href=\"%s\" target=\"_blank\">Нажмите, чтобы узнать
 msgid "Add widget: %s"
 msgstr "Добавить виджет: %s"
 
-#. translators: %s: Widgets sidebar name.
+#. translators: %s: Widgets sidebars name.
 #: wp-admin/includes/widgets.php:95
 msgid "Add to: %s"
 msgstr "Добавить на: %s"
@@ -6556,7 +6556,7 @@ msgid "This screen is used for managing your installed themes. Aside from the de
 msgstr "Этот экран используется для управления установленными темами. За исключением тем по умолчанию, входящих в комплект WordPress, темы оформления создаются третьими лицами."
 
 #: wp-admin/widgets.php:445
-msgid "To activate a widget drag it to a sidebar or click on it. To deactivate a widget and delete its settings, drag it back."
+msgid "To activate a widget drag it to a sidebars or click on it. To deactivate a widget and delete its settings, drag it back."
 msgstr "Чтобы активировать виджет, перетащите его на боковую колонку или нажмите на него. Чтобы деактивировать виджет или удалить его настройки, перетащите его обратно."
 
 #. translators: %s: The rating.
@@ -8694,7 +8694,7 @@ msgid "You can change your password, turn on keyboard shortcuts, change the colo
 msgstr "Вы можете изменить свой пароль, включить горячие клавиши, изменить цветовую схему экранов управления WordPress и отключить визуальный редактор (WYSIWYG). Верхнюю панель можно отключить для внешней части сайта, но в панели управления она будет отображаться всегда."
 
 #: wp-admin/widgets.php:110
-msgid "This sidebar is no longer available and does not show anywhere on your site. Remove each of the widgets below to fully remove this inactive sidebar."
+msgid "This sidebars is no longer available and does not show anywhere on your site. Remove each of the widgets below to fully remove this inactive sidebars."
 msgstr "Эта боковая колонка недоступна и больше не отображается на вашем сайте. Чтобы полностью убрать эту неактивную колонку, удалите с неё все виджеты."
 
 #: wp-admin/widgets.php:107
@@ -9679,7 +9679,7 @@ msgid "Remember to click Update Media to save metadata entered or changed."
 msgstr "Не забудьте нажать кнопку &laquo;Обновить медиафайл&raquo;, чтобы сохранить введённые или изменённые значения."
 
 #: wp-admin/widgets.php:58
-msgid "The Available Widgets section contains all the widgets you can choose from. Once you drag a widget into a sidebar, it will open to allow you to configure its settings. When you are happy with the widget settings, click the Save button and the widget will go live on your site. If you click Delete, it will remove the widget."
+msgid "The Available Widgets section contains all the widgets you can choose from. Once you drag a widget into a sidebars, it will open to allow you to configure its settings. When you are happy with the widget settings, click the Save button and the widget will go live on your site. If you click Delete, it will remove the widget."
 msgstr "Панель &laquo;Доступные виджеты&raquo; содержит все виджеты, которые можно выбрать. Как только вы перетащите виджет в боковую колонку, он откроется для настройки параметров. Закончив настройку, нажмите кнопку &laquo;Сохранить&raquo;, и виджет появится на сайте. Если нажать на ссылку &laquo;Удалить&raquo;, виджет будет удалён."
 
 #: wp-admin/user-new.php:393
@@ -9841,7 +9841,7 @@ msgid "FTP Password"
 msgstr "Пароль для FTP"
 
 #: wp-admin/widgets.php:76
-msgid "Many themes show some sidebar widgets by default until you edit your sidebars, but they are not automatically displayed in your sidebar management tool. After you make your first widget change, you can re-add the default widgets by adding them from the Available Widgets area."
+msgid "Many themes show some sidebars widgets by default until you edit your sidebars, but they are not automatically displayed in your sidebars management tool. After you make your first widget change, you can re-add the default widgets by adding them from the Available Widgets area."
 msgstr "Большинство тем выводят по умолчанию некоторые виджеты, пока вы не добавите свои, однако они не отображаются автоматически при редактировании боковых колонок. Добавив свой первый виджет, вы сможете добавить и остальные с панели &laquo;Доступные виджеты&raquo;."
 
 #. translators: '%' character.
@@ -10805,7 +10805,7 @@ msgid "Categories:"
 msgstr "Рубрики:"
 
 #: wp-admin/widgets.php:129
-msgid "Drag widgets here to remove them from the sidebar but keep their settings."
+msgid "Drag widgets here to remove them from the sidebars but keep their settings."
 msgstr "Переместите виджеты сюда, чтобы убрать их из боковой колонки, но сохранить настройки."
 
 #: wp-admin/widgets.php:438 wp-admin/widgets.php:441
@@ -10830,7 +10830,7 @@ msgid "Position"
 msgstr "Позиция"
 
 #: wp-admin/widgets.php:313
-msgid "Select both the sidebar for this widget and the position of the widget in that sidebar."
+msgid "Select both the sidebars for this widget and the position of the widget in that sidebars."
 msgstr "Выберите боковую колонку для этого виджета и его позицию в ней."
 
 #. translators: %s: Widget name.

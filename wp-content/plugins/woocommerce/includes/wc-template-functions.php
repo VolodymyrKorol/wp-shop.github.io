@@ -993,10 +993,10 @@ if ( ! function_exists( 'woocommerce_output_content_wrapper_end' ) ) {
 if ( ! function_exists( 'woocommerce_get_sidebar' ) ) {
 
 	/**
-	 * Get the shop sidebar template.
+	 * Get the shop sidebars template.
 	 */
 	function woocommerce_get_sidebar() {
-		wc_get_template( 'global/sidebar.php' );
+		wc_get_template( 'global/sidebars.php' );
 	}
 }
 
@@ -3295,7 +3295,7 @@ if ( ! function_exists( 'wc_display_item_downloads' ) ) {
 if ( ! function_exists( 'woocommerce_photoswipe' ) ) {
 
 	/**
-	 * Get the shop sidebar template.
+	 * Get the shop sidebars template.
 	 */
 	function woocommerce_photoswipe() {
 		if ( current_theme_supports( 'wc-product-gallery-lightbox' ) ) {

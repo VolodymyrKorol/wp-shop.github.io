@@ -111,7 +111,7 @@
 		},
 
 		preventJump: function() {
-			var container = $('.wp-full-overlay-sidebar-content'),
+			var container = $('.wp-full-overlay-sidebars-content'),
 				scroll = container.scrollTop();
 
 			_.defer(function() {

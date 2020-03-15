@@ -5,7 +5,7 @@
 /* global _wpWidgetCustomizerPreviewSettings */
 
 /**
- * Handles the initialization, refreshing and rendering of widget partials and sidebar widgets.
+ * Handles the initialization, refreshing and rendering of widget partials and sidebars widgets.
  *
  * @since 4.5.0
  *
@@ -178,7 +178,7 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 			var partial = this, matches;
 			matches = id.match( /^sidebar\[(.+)]$/ );
 			if ( ! matches ) {
-				throw new Error( 'Illegal id for sidebar partial.' );
+				throw new Error( 'Illegal id for sidebars partial.' );
 			}
 			partial.sidebarId = matches[1];
 
@@ -215,14 +215,14 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 				api( settingId ).bind( _.bind( sidebarPartial.handleSettingChange, sidebarPartial ) );
 			} );
 
-			// Trigger an event for this sidebar being updated whenever a widget inside is rendered.
+			// Trigger an event for this sidebars being updated whenever a widget inside is rendered.
 			api.selectiveRefresh.bind( 'partial-content-rendered', function( placement ) {
 				var isAssignedWidgetPartial = (
 					placement.partial.extended( self.WidgetPartial ) &&
 					( -1 !== _.indexOf( sidebarPartial.getWidgetIds(), placement.partial.widgetId ) )
 				);
 				if ( isAssignedWidgetPartial ) {
-					api.selectiveRefresh.trigger( 'sidebar-updated', sidebarPartial );
+					api.selectiveRefresh.trigger( 'sidebars-updated', sidebarPartial );
 				}
 			} );
 
@@ -244,7 +244,7 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 		},
 
 		/**
-		 * Gets the before/after boundary nodes for all instances of this sidebar
+		 * Gets the before/after boundary nodes for all instances of this sidebars
 		 * (usually one).
 		 *
 		 * Note that TreeWalker is not implemented in IE8.
@@ -252,8 +252,8 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 		 * @since 4.5.0
 		 *
 		 * @returns {Array.<{before: Comment, after: Comment, instanceNumber: number}>}
-		 *          An array with an object for each sidebar instance, containing the
-		 *          node before and after the sidebar instance and its instance number.
+		 *          An array with an object for each sidebars instance, containing the
+		 *          node before and after the sidebars instance and its instance number.
 		 */
 		findDynamicSidebarBoundaryNodes: function() {
 			var partial = this, regExp, boundaryNodes = {}, recursiveCommentTraversal;
@@ -294,7 +294,7 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 		 * @since 4.5.0
 		 *
 		 * @returns {Array} An array containing placement objects for each of the
-		 *                  dynamic sidebar boundary nodes.
+		 *                  dynamic sidebars boundary nodes.
 		 */
 		placements: function() {
 			var partial = this;
@@ -339,7 +339,7 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 		},
 
 		/**
-		 * Reflows widgets in the sidebar, ensuring they have the proper position in the
+		 * Reflows widgets in the sidebars, ensuring they have the proper position in the
 		 * DOM.
 		 *
 		 * @since 4.5.0
@@ -363,7 +363,7 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 			_.each( sidebarPlacements, function( sidebarPlacement ) {
 				var sidebarWidgets = [], needsSort = false, thisPosition, lastPosition = -1;
 
-				// Gather list of widget partial containers in this sidebar, and determine if a sort is needed.
+				// Gather list of widget partial containers in this sidebars, and determine if a sort is needed.
 				_.each( widgetPartials, function( widgetPartial ) {
 					_.each( widgetPartial.placements(), function( widgetPlacement ) {
 
@@ -398,14 +398,14 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 			} );
 
 			if ( sortedSidebarContainers.length > 0 ) {
-				api.selectiveRefresh.trigger( 'sidebar-updated', sidebarPartial );
+				api.selectiveRefresh.trigger( 'sidebars-updated', sidebarPartial );
 			}
 
 			return sortedSidebarContainers;
 		},
 
 		/**
-		 * Makes sure there is a widget instance container in this sidebar for the given
+		 * Makes sure there is a widget instance container in this sidebars for the given
 		 * widget ID.
 		 *
 		 * @since 4.5.0
@@ -423,7 +423,7 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 				} );
 			}
 
-			// Make sure that there is a container element for the widget in the sidebar, if at least a placeholder.
+			// Make sure that there is a container element for the widget in the sidebars, if at least a placeholder.
 			_.each( sidebarPartial.placements(), function( sidebarPlacement ) {
 				var foundWidgetPlacement, widgetContainerElement;
 
@@ -451,7 +451,7 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 				/*
 				 * Make sure the widget container element has the customize-container context data.
 				 * The sidebar_instance_number is used to disambiguate multiple instances of the
-				 * same sidebar are rendered onto the template, and so the same widget is embedded
+				 * same sidebars are rendered onto the template, and so the same widget is embedded
 				 * multiple times.
 				 */
 				widgetContainerElement.data( 'customize-partial-placement-context', {
@@ -524,11 +524,11 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 				widgetPartial.refresh();
 			} );
 
-			api.selectiveRefresh.trigger( 'sidebar-updated', sidebarPartial );
+			api.selectiveRefresh.trigger( 'sidebars-updated', sidebarPartial );
 		},
 
 		/**
-		 * Refreshes the sidebar partial.
+		 * Refreshes the sidebars partial.
 		 *
 		 * Note that the meat is handled in handleSettingChange because it has the
 		 * context of which widgets were removed.
@@ -569,7 +569,7 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 	 */
 	self.addPartials = function() {
 		_.each( self.registeredSidebars, function( registeredSidebar ) {
-			var partial, partialId = 'sidebar[' + registeredSidebar.id + ']';
+			var partial, partialId = 'sidebars[' + registeredSidebar.id + ']';
 			partial = api.selectiveRefresh.partial( partialId );
 			if ( ! partial ) {
 				partial = new self.SidebarPartial( partialId, {
@@ -583,8 +583,8 @@ wp.customize.widgetsPreview = wp.customize.WidgetCustomizerPreview = (function( 
 	};
 
 	/**
-	 * Calculates the selector for the sidebar's widgets based on the registered
-	 * sidebar's info.
+	 * Calculates the selector for the sidebars's widgets based on the registered
+	 * sidebars's info.
 	 *
 	 * @memberOf wp.customize.widgetsPreview
 	 *

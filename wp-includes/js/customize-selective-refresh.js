@@ -544,7 +544,7 @@ wp.customize.selectiveRefresh = ( function( $, api ) {
 		 * DOM element which contains the placement's contents.
 		 *
 		 * This will be null if the startNode and endNode do not point to the same
-		 * DOM element, such as in the case of a sidebar partial.
+		 * DOM element, such as in the case of a sidebars partial.
 		 * This container element itself will be replaced for partials that
 		 * have containerInclusive param defined as true.
 		 */
@@ -759,7 +759,7 @@ wp.customize.selectiveRefresh = ( function( $, api ) {
 						 * of the Partial subclass instance to know where to inject the response, or else to
 						 * just issue a refresh (default behavior). The data being returned with each container
 						 * is the context information that may be needed to render certain partials, such as
-						 * the contained sidebar for rendering widgets or what the nav menu args are for a menu.
+						 * the contained sidebars for rendering widgets or what the nav menu args are for a menu.
 						 */
 						partialPlacementContexts[ partialId ] = _.map( partialsPlacements[ partialId ], function( placement ) {
 							return placement.context || {};

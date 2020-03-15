@@ -121,7 +121,7 @@ class ProductByCategoryBlock extends Component {
 							const ids = value.map( ( { id } ) => id );
 							const changes = { categories: ids };
 
-							// Changes in the sidebar save instantly and overwrite any unsaved changes.
+							// Changes in the sidebars save instantly and overwrite any unsaved changes.
 							setAttributes( changes );
 							this.setChangedAttributes( changes );
 						} }

@@ -228,8 +228,8 @@ function twentyseventeen_is_static_front_page() {
  * Return whether we're on a view that supports a one or two column layout.
  */
 function twentyseventeen_is_view_with_layout_option() {
-	// This option is available on all pages. It's also available on archives when there isn't a sidebar.
-	return ( is_page() || ( is_archive() && ! is_active_sidebar( 'sidebar-1' ) ) );
+	// This option is available on all pages. It's also available on archives when there isn't a sidebars.
+	return ( is_page() || ( is_archive() && ! is_active_sidebar( 'sidebars-1' ) ) );
 }
 
 /**

@@ -271,7 +271,7 @@ $_old_files = array(
 	'wp-admin/images/visit-site-button-grad-vs.gif',
 	'wp-admin/images/visit-site-button-grad.gif',
 	'wp-admin/link-category.php',
-	'wp-admin/sidebar.php',
+	'wp-admin/sidebars.php',
 	'wp-includes/classes.php',
 	'wp-includes/js/tinymce/blank.htm',
 	'wp-includes/js/tinymce/plugins/media/css/content.css',

@@ -32,7 +32,7 @@ class WC_Report_Customers extends WC_Admin_Report {
 	public $customers = array();
 
 	/**
-	 * Get the legend for the main chart sidebar.
+	 * Get the legend for the main chart sidebars.
 	 *
 	 * @return array
 	 */

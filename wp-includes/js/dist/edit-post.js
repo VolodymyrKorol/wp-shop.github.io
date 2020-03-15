@@ -1012,7 +1012,7 @@ var PREFERENCES_DEFAULTS = {
 
 
 /**
- * The default active general sidebar: The "Document" tab.
+ * The default active general sidebars: The "Document" tab.
  *
  * @type {string}
  */
@@ -1042,15 +1042,15 @@ var createWithInitialState = function createWithInitialState(initialState) {
  * @param {Object}  state                           Current state.
  * @param {string}  state.mode                      Current editor mode, either
  *                                                  "visual" or "text".
- * @param {boolean} state.isGeneralSidebarDismissed Whether general sidebar is
+ * @param {boolean} state.isGeneralSidebarDismissed Whether general sidebars is
  *                                                  dismissed. False by default
  *                                                  or when closing general
- *                                                  sidebar, true when opening
- *                                                  sidebar.
- * @param {boolean} state.isSidebarOpened           Whether the sidebar is
+ *                                                  sidebars, true when opening
+ *                                                  sidebars.
+ * @param {boolean} state.isSidebarOpened           Whether the sidebars is
  *                                                  opened or closed.
  * @param {Object}  state.panels                    The state of the different
- *                                                  sidebar panels.
+ *                                                  sidebars panels.
  * @param {Object}  action                          Dispatched action.
  *
  * @return {Object} Updated state.
@@ -1172,8 +1172,8 @@ function removedPanels() {
   return state;
 }
 /**
- * Reducer returning the next active general sidebar state. The active general
- * sidebar is a unique name to identify either an editor or plugin sidebar.
+ * Reducer returning the next active general sidebars state. The active general
+ * sidebars is a unique name to identify either an editor or plugin sidebars.
  *
  * @param {?string} state  Current state.
  * @param {Object}  action Action object.
@@ -1311,7 +1311,7 @@ var external_this_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(exter
  */
 
 /**
- * Returns an action object used in signalling that the user opened an editor sidebar.
+ * Returns an action object used in signalling that the user opened an editor sidebars.
  *
  * @param {string} name Sidebar name to be opened.
  *
@@ -1325,7 +1325,7 @@ function actions_openGeneralSidebar(name) {
   };
 }
 /**
- * Returns an action object signalling that the user closed the sidebar.
+ * Returns an action object signalling that the user closed the sidebars.
  *
  * @return {Object} Action object.
  */
@@ -1362,7 +1362,7 @@ function actions_closeModal() {
 }
 /**
  * Returns an action object used in signalling that the user opened the publish
- * sidebar.
+ * sidebars.
  *
  * @return {Object} Action object
  */
@@ -1374,7 +1374,7 @@ function openPublishSidebar() {
 }
 /**
  * Returns an action object used in signalling that the user closed the
- * publish sidebar.
+ * publish sidebars.
  *
  * @return {Object} Action object.
  */
@@ -1385,7 +1385,7 @@ function actions_closePublishSidebar() {
   };
 }
 /**
- * Returns an action object used in signalling that the user toggles the publish sidebar.
+ * Returns an action object used in signalling that the user toggles the publish sidebars.
  *
  * @return {Object} Action object
  */
@@ -1582,11 +1582,11 @@ function getEditorMode(state) {
   return selectors_getPreference(state, 'editorMode', 'visual');
 }
 /**
- * Returns true if the editor sidebar is opened.
+ * Returns true if the editor sidebars is opened.
  *
  * @param {Object} state Global application state
  *
- * @return {boolean} Whether the editor sidebar is opened.
+ * @return {boolean} Whether the editor sidebars is opened.
  */
 
 function selectors_isEditorSidebarOpened(state) {
@@ -1594,10 +1594,10 @@ function selectors_isEditorSidebarOpened(state) {
   return Object(external_lodash_["includes"])(['edit-post/document', 'edit-post/block'], activeGeneralSidebar);
 }
 /**
- * Returns true if the plugin sidebar is opened.
+ * Returns true if the plugin sidebars is opened.
  *
  * @param {Object} state Global application state
- * @return {boolean}     Whether the plugin sidebar is opened.
+ * @return {boolean}     Whether the plugin sidebars is opened.
  */
 
 function isPluginSidebarOpened(state) {
@@ -1605,18 +1605,18 @@ function isPluginSidebarOpened(state) {
   return !!activeGeneralSidebar && !selectors_isEditorSidebarOpened(state);
 }
 /**
- * Returns the current active general sidebar name, or null if there is no
- * general sidebar active. The active general sidebar is a unique name to
- * identify either an editor or plugin sidebar.
+ * Returns the current active general sidebars name, or null if there is no
+ * general sidebars active. The active general sidebars is a unique name to
+ * identify either an editor or plugin sidebars.
  *
  * Examples:
  *
  *  - `edit-post/document`
- *  - `my-plugin/insert-image-sidebar`
+ *  - `my-plugin/insert-image-sidebars`
  *
  * @param {Object} state Global application state.
  *
- * @return {?string} Active general sidebar name.
+ * @return {?string} Active general sidebars name.
  */
 
 function getActiveGeneralSidebarName(state) {
@@ -1655,11 +1655,11 @@ function selectors_getPreference(state, preferenceKey, defaultValue) {
   return value === undefined ? defaultValue : value;
 }
 /**
- * Returns true if the publish sidebar is opened.
+ * Returns true if the publish sidebars is opened.
  *
  * @param {Object} state Global application state
  *
- * @return {boolean} Whether the publish sidebar is open.
+ * @return {boolean} Whether the publish sidebars is open.
  */
 
 function selectors_isPublishSidebarOpened(state) {
@@ -2758,7 +2758,7 @@ function PostPublishButtonOrToggle(_ref) {
   var IS_BUTTON = 'button';
   var component;
   /**
-   * Conditions to show a BUTTON (publish directly) or a TOGGLE (open publish sidebar):
+   * Conditions to show a BUTTON (publish directly) or a TOGGLE (open publish sidebars):
    *
    * 1) We want to show a BUTTON when the post status is at the _final stage_
    * for a particular role (see https://wordpress.org/support/article/post-status/):
@@ -2774,7 +2774,7 @@ function PostPublishButtonOrToggle(_ref) {
    *
    * 2) Then, in small viewports, we'll show a TOGGLE.
    *
-   * 3) Finally, we'll use the publish sidebar status to decide:
+   * 3) Finally, we'll use the publish sidebars status to decide:
    *
    * - if it is enabled, we show a TOGGLE
    * - if it is disabled, we show a BUTTON
@@ -2861,11 +2861,11 @@ function Header(_ref) {
     className: "edit-post-header__toolbar"
   }, Object(external_this_wp_element_["createElement"])(fullscreen_mode_close, null), Object(external_this_wp_element_["createElement"])(header_toolbar, null)), Object(external_this_wp_element_["createElement"])("div", {
     className: "edit-post-header__settings"
-  }, !isPublishSidebarOpened && // This button isn't completely hidden by the publish sidebar.
-  // We can't hide the whole toolbar when the publish sidebar is open because
+  }, !isPublishSidebarOpened && // This button isn't completely hidden by the publish sidebars.
+  // We can't hide the whole toolbar when the publish sidebars is open because
   // we want to prevent mounting/unmounting the PostPublishButtonOrToggle DOM node.
   // We track that DOM node to return focus to the PostPublishButtonOrToggle
-  // when the publish sidebar has been closed.
+  // when the publish sidebars has been closed.
   Object(external_this_wp_element_["createElement"])(external_this_wp_editor_["PostSavedState"], {
     forceIsDirty: hasActiveMetaboxes,
     forceIsSaving: isSaving
@@ -2884,7 +2884,7 @@ function Header(_ref) {
     shortcut: keyboard_shortcuts.toggleSidebar
   }), Object(external_this_wp_element_["createElement"])(external_this_wp_nux_["DotTip"], {
     tipId: "core/editor.settings"
-  }, Object(external_this_wp_i18n_["__"])('You’ll find more settings for your page and blocks in the sidebar. Click the cog icon to toggle the sidebar open and closed.'))), Object(external_this_wp_element_["createElement"])(pinned_plugins.Slot, null), Object(external_this_wp_element_["createElement"])(more_menu, null)));
+  }, Object(external_this_wp_i18n_["__"])('You’ll find more settings for your page and blocks in the sidebars. Click the cog icon to toggle the sidebars open and closed.'))), Object(external_this_wp_element_["createElement"])(pinned_plugins.Slot, null), Object(external_this_wp_element_["createElement"])(more_menu, null)));
 }
 
 /* harmony default export */ var header = (Object(external_this_wp_compose_["compose"])(Object(external_this_wp_data_["withSelect"])(function (select) {
@@ -2987,7 +2987,7 @@ function BlockInspectorButton(_ref) {
     if (areAdvancedSettingsOpened) {
       speak(Object(external_this_wp_i18n_["__"])('Block settings closed'));
     } else {
-      speak(Object(external_this_wp_i18n_["__"])('Additional settings are now available in the Editor block settings sidebar'));
+      speak(Object(external_this_wp_i18n_["__"])('Additional settings are now available in the Editor block settings sidebars'));
     }
   };
 
@@ -3242,7 +3242,7 @@ var globalShortcuts = {
     description: Object(external_this_wp_i18n_["__"])('Redo your last undo.')
   }, {
     keyCombination: primaryShift(','),
-    description: Object(external_this_wp_i18n_["__"])('Show or hide the settings sidebar.'),
+    description: Object(external_this_wp_i18n_["__"])('Show or hide the settings sidebars.'),
     ariaLabel: external_this_wp_keycodes_["shortcutAriaLabel"].primaryShift(',')
   }, {
     keyCombination: access('o'),
@@ -3908,7 +3908,7 @@ var enable_plugin_document_setting_panel_EnablePluginDocumentSettingPanelOption 
 enable_plugin_document_setting_panel_EnablePluginDocumentSettingPanelOption.Slot = enable_plugin_document_setting_panel_Slot;
 /* harmony default export */ var enable_plugin_document_setting_panel = (enable_plugin_document_setting_panel_EnablePluginDocumentSettingPanelOption);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/options/enable-publish-sidebar.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/options-modal/options/enable-publish-sidebars.js
 /**
  * WordPress dependencies
  */
@@ -3934,7 +3934,7 @@ enable_plugin_document_setting_panel_EnablePluginDocumentSettingPanelOption.Slot
       return isEnabled ? enablePublishSidebar() : disablePublishSidebar();
     }
   };
-}), // In < medium viewports we override this option and always show the publish sidebar.
+}), // In < medium viewports we override this option and always show the publish sidebars.
 // See the edit-post's header component for the specific logic.
 Object(external_this_wp_viewport_["ifViewportMatches"])('medium'))(base));
 
@@ -4454,7 +4454,7 @@ function MetaBoxes(_ref) {
   };
 })(MetaBoxes));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/index.js
 
 
 /**
@@ -4473,9 +4473,9 @@ var sidebar_createSlotFill = Object(external_this_wp_components_["createSlotFill
     sidebar_Fill = sidebar_createSlotFill.Fill,
     sidebar_Slot = sidebar_createSlotFill.Slot;
 /**
- * Renders a sidebar with its content.
+ * Renders a sidebars with its content.
  *
- * @return {Object} The rendered sidebar.
+ * @return {Object} The rendered sidebars.
  */
 
 
@@ -4484,7 +4484,7 @@ function Sidebar(_ref) {
       label = _ref.label,
       className = _ref.className;
   return Object(external_this_wp_element_["createElement"])("div", {
-    className: classnames_default()('edit-post-sidebar', className),
+    className: classnames_default()('edit-post-sidebars', className),
     role: "region",
     "aria-label": label,
     tabIndex: "-1"
@@ -4525,7 +4525,7 @@ var WrappedSidebar = Object(external_this_wp_compose_["compose"])(Object(externa
 WrappedSidebar.Slot = sidebar_Slot;
 /* harmony default export */ var sidebar = (WrappedSidebar);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/sidebar-header/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/sidebars-header/index.js
 
 
 /**
@@ -4553,15 +4553,15 @@ var sidebar_header_SidebarHeader = function SidebarHeader(_ref) {
       closeSidebar = _ref.closeSidebar,
       title = _ref.title;
   return Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])("div", {
-    className: "components-panel__header edit-post-sidebar-header__small"
+    className: "components-panel__header edit-post-sidebars-header__small"
   }, Object(external_this_wp_element_["createElement"])("span", {
-    className: "edit-post-sidebar-header__title"
+    className: "edit-post-sidebars-header__title"
   }, title || Object(external_this_wp_i18n_["__"])('(no title)')), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["IconButton"], {
     onClick: closeSidebar,
     icon: "no-alt",
     label: closeLabel
   })), Object(external_this_wp_element_["createElement"])("div", {
-    className: classnames_default()('components-panel__header edit-post-sidebar-header', className)
+    className: classnames_default()('components-panel__header edit-post-sidebars-header', className)
   }, children, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["IconButton"], {
     onClick: closeSidebar,
     icon: "no-alt",
@@ -4580,7 +4580,7 @@ var sidebar_header_SidebarHeader = function SidebarHeader(_ref) {
   };
 }))(sidebar_header_SidebarHeader));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/settings-header/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/settings-header/index.js
 
 
 
@@ -4602,8 +4602,8 @@ var settings_header_SettingsHeader = function SettingsHeader(_ref) {
 
   var blockLabel = Object(external_this_wp_i18n_["__"])('Block');
 
-  var _ref2 = sidebarName === 'edit-post/document' ? // translators: ARIA label for the Document sidebar tab, selected.
-  [Object(external_this_wp_i18n_["__"])('Document (selected)'), 'is-active'] : // translators: ARIA label for the Document sidebar tab, not selected.
+  var _ref2 = sidebarName === 'edit-post/document' ? // translators: ARIA label for the Document sidebars tab, selected.
+  [Object(external_this_wp_i18n_["__"])('Document (selected)'), 'is-active'] : // translators: ARIA label for the Document sidebars tab, not selected.
   [Object(external_this_wp_i18n_["__"])('Document'), ''],
       _ref3 = Object(slicedToArray["a" /* default */])(_ref2, 2),
       documentAriaLabel = _ref3[0],
@@ -4650,7 +4650,7 @@ var settings_header_SettingsHeader = function SettingsHeader(_ref) {
   };
 })(settings_header_SettingsHeader));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-visibility/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-visibility/index.js
 
 
 /**
@@ -4688,7 +4688,7 @@ function PostVisibility() {
 }
 /* harmony default export */ var post_visibility = (PostVisibility);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-trash/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-trash/index.js
 
 
 /**
@@ -4700,7 +4700,7 @@ function PostTrash() {
   return Object(external_this_wp_element_["createElement"])(external_this_wp_editor_["PostTrashCheck"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["PanelRow"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_editor_["PostTrash"], null)));
 }
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-schedule/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-schedule/index.js
 
 
 /**
@@ -4733,7 +4733,7 @@ function PostSchedule() {
 }
 /* harmony default export */ var post_schedule = (PostSchedule);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-sticky/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-sticky/index.js
 
 
 /**
@@ -4746,7 +4746,7 @@ function PostSticky() {
 }
 /* harmony default export */ var post_sticky = (PostSticky);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-author/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-author/index.js
 
 
 /**
@@ -4759,7 +4759,7 @@ function PostAuthor() {
 }
 /* harmony default export */ var post_author = (PostAuthor);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-format/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-format/index.js
 
 
 /**
@@ -4772,7 +4772,7 @@ function PostFormat() {
 }
 /* harmony default export */ var post_format = (PostFormat);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-pending-status/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-pending-status/index.js
 
 
 /**
@@ -4785,7 +4785,7 @@ function PostPendingStatus() {
 }
 /* harmony default export */ var post_pending_status = (PostPendingStatus);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/plugin-post-status-info/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/plugin-post-status-info/index.js
 
 
 /**
@@ -4801,7 +4801,7 @@ var plugin_post_status_info_createSlotFill = Object(external_this_wp_components_
     plugin_post_status_info_Fill = plugin_post_status_info_createSlotFill.Fill,
     plugin_post_status_info_Slot = plugin_post_status_info_createSlotFill.Slot;
 /**
- * Renders a row in the Status & Visibility panel of the Document sidebar.
+ * Renders a row in the Status & Visibility panel of the Document sidebars.
  * It should be noted that this is named and implemented around the function it serves
  * and not its location, which may change in future iterations.
  *
@@ -4857,7 +4857,7 @@ var plugin_post_status_info_PluginPostStatusInfo = function PluginPostStatusInfo
 plugin_post_status_info_PluginPostStatusInfo.Slot = plugin_post_status_info_Slot;
 /* harmony default export */ var plugin_post_status_info = (plugin_post_status_info_PluginPostStatusInfo);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-status/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-status/index.js
 
 
 /**
@@ -4920,7 +4920,7 @@ function PostStatus(_ref) {
   };
 })])(PostStatus));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/last-revision/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/last-revision/index.js
 
 
 /**
@@ -4937,7 +4937,7 @@ function LastRevision() {
 
 /* harmony default export */ var last_revision = (LastRevision);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-taxonomies/taxonomy-panel.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-taxonomies/taxonomy-panel.js
 
 
 /**
@@ -4992,7 +4992,7 @@ function TaxonomyPanel(_ref) {
   };
 }))(TaxonomyPanel));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-taxonomies/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-taxonomies/index.js
 
 
 /**
@@ -5017,7 +5017,7 @@ function PostTaxonomies() {
 
 /* harmony default export */ var post_taxonomies = (PostTaxonomies);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/featured-image/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/featured-image/index.js
 
 
 /**
@@ -5083,7 +5083,7 @@ var applyWithDispatch = Object(external_this_wp_data_["withDispatch"])(function 
 });
 /* harmony default export */ var featured_image = (Object(external_this_wp_compose_["compose"])(applyWithSelect, applyWithDispatch)(FeaturedImage));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-excerpt/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-excerpt/index.js
 
 
 /**
@@ -5129,7 +5129,7 @@ function PostExcerpt(_ref) {
   };
 })])(PostExcerpt));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/post-link/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/post-link/index.js
 
 
 /**
@@ -5299,7 +5299,7 @@ function PostLink(_ref) {
   forceEmptyField: false
 })])(PostLink));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/discussion-panel/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/discussion-panel/index.js
 
 
 /**
@@ -5351,7 +5351,7 @@ function DiscussionPanel(_ref) {
   };
 })])(DiscussionPanel));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/page-attributes/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/page-attributes/index.js
 
 
 /**
@@ -5415,11 +5415,11 @@ var page_attributes_applyWithDispatch = Object(external_this_wp_data_["withDispa
 });
 /* harmony default export */ var page_attributes = (Object(external_this_wp_compose_["compose"])(page_attributes_applyWithSelect, page_attributes_applyWithDispatch)(PageAttributes));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/plugin-document-setting-panel/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/plugin-document-setting-panel/index.js
 
 
 /**
- * Defines as extensibility slot for the Settings sidebar
+ * Defines as extensibility slot for the Settings sidebars
  */
 
 /**
@@ -5468,7 +5468,7 @@ var plugin_document_setting_panel_PluginDocumentSettingFill = function PluginDoc
  * @param {string} [props.name] The machine-friendly name for the panel.
  * @param {string} [props.className] An optional class name added to the row.
  * @param {string} [props.title] The title of the panel
- * @param {string|Element} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebar is pinned to toolbar.
+ * @param {string|Element} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebars is pinned to toolbar.
  *
  * @example <caption>ES5</caption>
  * ```js
@@ -5535,7 +5535,7 @@ var PluginDocumentSettingPanel = Object(external_this_wp_compose_["compose"])(Ob
 PluginDocumentSettingPanel.Slot = plugin_document_setting_panel_Slot;
 /* harmony default export */ var plugin_document_setting_panel = (PluginDocumentSettingPanel);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/settings-sidebar/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/settings-sidebars/index.js
 
 
 /**
@@ -5591,7 +5591,7 @@ var settings_sidebar_SettingsSidebar = function SettingsSidebar(_ref) {
   return isEditorSidebarOpened;
 }))(settings_sidebar_SettingsSidebar));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/plugin-post-publish-panel/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/plugin-post-publish-panel/index.js
 
 
 /**
@@ -5627,7 +5627,7 @@ var plugin_post_publish_panel_PluginPostPublishPanelFill = function PluginPostPu
  * @param {string} [props.className] An optional class name added to the panel.
  * @param {string} [props.title] Title displayed at the top of the panel.
  * @param {boolean} [props.initialOpen=false] Whether to have the panel initially opened. When no title is provided it is always opened.
- * @param {string|Element} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebar is pinned to toolbar.
+ * @param {string|Element} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebars is pinned to toolbar.
  *
  * @example <caption>ES5</caption>
  * ```js
@@ -5677,7 +5677,7 @@ var PluginPostPublishPanel = Object(external_this_wp_compose_["compose"])(Object
 PluginPostPublishPanel.Slot = plugin_post_publish_panel_Slot;
 /* harmony default export */ var plugin_post_publish_panel = (PluginPostPublishPanel);
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/plugin-pre-publish-panel/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/plugin-pre-publish-panel/index.js
 
 
 /**
@@ -5713,7 +5713,7 @@ var plugin_pre_publish_panel_PluginPrePublishPanelFill = function PluginPrePubli
  * @param {string} [props.className] An optional class name added to the panel.
  * @param {string} [props.title] Title displayed at the top of the panel.
  * @param {boolean} [props.initialOpen=false] Whether to have the panel initially opened. When no title is provided it is always opened.
- * @param {string|Element} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebar is pinned to toolbar.
+ * @param {string|Element} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebars is pinned to toolbar.
 
  *
  * @example <caption>ES5</caption>
@@ -5975,7 +5975,7 @@ function Layout(_ref) {
 
 /**
  * This listener hook monitors for block selection and triggers the appropriate
- * sidebar state.
+ * sidebars state.
  *
  * @param {number} postId  The current post id.
  */
@@ -6006,7 +6006,7 @@ var listener_hooks_useBlockSelectionListener = function useBlockSelectionListene
   }, [hasBlockSelection, isEditorSidebarOpened]);
 };
 /**
- * This listener hook is used to monitor viewport size and adjust the sidebar
+ * This listener hook is used to monitor viewport size and adjust the sidebars
  * accordingly.
  *
  * @param {number} postId  The current post id.
@@ -6477,7 +6477,7 @@ var plugin_more_menu_item_PluginMoreMenuItem = function PluginMoreMenuItem(_ref)
   };
 }))(plugin_more_menu_item_PluginMoreMenuItem));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebar/plugin-sidebar/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/sidebars/plugin-sidebars/index.js
 
 
 /**
@@ -6530,21 +6530,21 @@ function PluginSidebar(props) {
   }, children)));
 }
 /**
- * Renders a sidebar when activated. The contents within the `PluginSidebar` will appear as content within the sidebar.
- * If you wish to display the sidebar, you can with use the `PluginSidebarMoreMenuItem` component or the `wp.data.dispatch` API:
+ * Renders a sidebars when activated. The contents within the `PluginSidebar` will appear as content within the sidebars.
+ * If you wish to display the sidebars, you can with use the `PluginSidebarMoreMenuItem` component or the `wp.data.dispatch` API:
  *
  * ```js
- * wp.data.dispatch( 'core/edit-post' ).openGeneralSidebar( 'plugin-name/sidebar-name' );
+ * wp.data.dispatch( 'core/edit-post' ).openGeneralSidebar( 'plugin-name/sidebars-name' );
  * ```
  *
  * @see PluginSidebarMoreMenuItem
  *
  * @param {Object} props Element props.
- * @param {string} props.name A string identifying the sidebar. Must be unique for every sidebar registered within the scope of your plugin.
- * @param {string} [props.className] An optional class name added to the sidebar body.
- * @param {string} props.title Title displayed at the top of the sidebar.
- * @param {boolean} [props.isPinnable=true] Whether to allow to pin sidebar to toolbar.
- * @param {string|Element} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebar is pinned to toolbar.
+ * @param {string} props.name A string identifying the sidebars. Must be unique for every sidebars registered within the scope of your plugin.
+ * @param {string} [props.className] An optional class name added to the sidebars body.
+ * @param {string} props.title Title displayed at the top of the sidebars.
+ * @param {boolean} [props.isPinnable=true] Whether to allow to pin sidebars to toolbar.
+ * @param {string|Element} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered when the sidebars is pinned to toolbar.
  *
  * @example <caption>ES5</caption>
  * ```js
@@ -6558,14 +6558,14 @@ function PluginSidebar(props) {
  * 	return el(
  * 			PluginSidebar,
  * 			{
- * 				name: 'my-sidebar',
- * 				title: 'My sidebar title',
+ * 				name: 'my-sidebars',
+ * 				title: 'My sidebars title',
  * 				icon: 'smiley',
  * 			},
  * 			el(
  * 				PanelBody,
  * 				{},
- * 				__( 'My sidebar content' )
+ * 				__( 'My sidebars content' )
  * 			)
  * 	);
  * }
@@ -6580,18 +6580,18 @@ function PluginSidebar(props) {
  *
  * const MyPluginSidebar = () => (
  * 	<PluginSidebar
- * 		name="my-sidebar"
- * 		title="My sidebar title"
+ * 		name="my-sidebars"
+ * 		title="My sidebars title"
  * 		icon="smiley"
  * 	>
  * 		<PanelBody>
- * 			{ __( 'My sidebar content' ) }
+ * 			{ __( 'My sidebars content' ) }
  * 		</PanelBody>
  * 	</PluginSidebar>
  * );
  * ```
  *
- * @return {WPElement} Plugin sidebar component.
+ * @return {WPElement} Plugin sidebars component.
  */
 
 
@@ -6634,7 +6634,7 @@ function PluginSidebar(props) {
   };
 }))(PluginSidebar));
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/header/plugin-sidebar-more-menu-item/index.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/header/plugin-sidebars-more-menu-item/index.js
 
 
 /**
@@ -6667,7 +6667,7 @@ var plugin_sidebar_more_menu_item_PluginSidebarMoreMenuItem = function PluginSid
  * The text within the component appears as the menu item label.
  *
  * @param {Object} props Component props.
- * @param {string} props.target A string identifying the target sidebar you wish to be activated by this menu item. Must be the same as the `name` prop you have given to that sidebar.
+ * @param {string} props.target A string identifying the target sidebars you wish to be activated by this menu item. Must be the same as the `name` prop you have given to that sidebars.
  * @param {string|Element} [props.icon=inherits from the plugin] The [Dashicon](https://developer.wordpress.org/resource/dashicons/) icon slug string, or an SVG WP element, to be rendered to the left of the menu item label.
  *
  * @example <caption>ES5</caption>
@@ -6680,10 +6680,10 @@ var plugin_sidebar_more_menu_item_PluginSidebarMoreMenuItem = function PluginSid
  * 	return wp.element.createElement(
  * 		PluginSidebarMoreMenuItem,
  * 		{
- * 			target: 'my-sidebar',
+ * 			target: 'my-sidebars',
  * 			icon: 'smiley',
  * 		},
- * 		__( 'My sidebar title' )
+ * 		__( 'My sidebars title' )
  * 	)
  * }
  * ```
@@ -6696,10 +6696,10 @@ var plugin_sidebar_more_menu_item_PluginSidebarMoreMenuItem = function PluginSid
  *
  * const MySidebarMoreMenuItem = () => (
  * 	<PluginSidebarMoreMenuItem
- * 		target="my-sidebar"
+ * 		target="my-sidebars"
  * 		icon="smiley"
  * 	>
- * 		{ __( 'My sidebar title' ) }
+ * 		{ __( 'My sidebars title' ) }
  * 	</PluginSidebarMoreMenuItem>
  * );
  * ```

@@ -297,8 +297,8 @@ function get_theme_feature_list( $api = true ) {
 			'two-columns'   => __( 'Two Columns' ),
 			'three-columns' => __( 'Three Columns' ),
 			'four-columns'  => __( 'Four Columns' ),
-			'left-sidebar'  => __( 'Left Sidebar' ),
-			'right-sidebar' => __( 'Right Sidebar' ),
+			'left-sidebars'  => __( 'Left Sidebar' ),
+			'right-sidebars' => __( 'Right Sidebar' ),
 		),
 
 	);

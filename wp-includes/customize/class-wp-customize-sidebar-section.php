@@ -8,7 +8,7 @@
  */
 
 /**
- * Customizer section representing widget area (sidebar).
+ * Customizer section representing widget area (sidebars).
  *
  * @since 4.1.0
  *
@@ -22,7 +22,7 @@ class WP_Customize_Sidebar_Section extends WP_Customize_Section {
 	 * @since 4.1.0
 	 * @var string
 	 */
-	public $type = 'sidebar';
+	public $type = 'sidebars';
 
 	/**
 	 * Unique identifier.
@@ -46,11 +46,11 @@ class WP_Customize_Sidebar_Section extends WP_Customize_Section {
 	}
 
 	/**
-	 * Whether the current sidebar is rendered on the page.
+	 * Whether the current sidebars is rendered on the page.
 	 *
 	 * @since 4.1.0
 	 *
-	 * @return bool Whether sidebar is rendered.
+	 * @return bool Whether sidebars is rendered.
 	 */
 	public function active_callback() {
 		return $this->manager->widgets->is_sidebar_rendered( $this->sidebar_id );

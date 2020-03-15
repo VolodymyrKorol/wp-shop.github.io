@@ -39,9 +39,9 @@ function twentyseventeen_body_classes( $classes ) {
 		$classes[] = 'has-header-image';
 	}
 
-	// Add class if sidebar is used.
-	if ( is_active_sidebar( 'sidebar-1' ) && ! is_page() ) {
-		$classes[] = 'has-sidebar';
+	// Add class if sidebars is used.
+	if ( is_active_sidebar( 'sidebars-1' ) && ! is_page() ) {
+		$classes[] = 'has-sidebars';
 	}
 
 	// Add class for one or two column page layouts.

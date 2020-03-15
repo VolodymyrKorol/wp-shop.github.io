@@ -1305,7 +1305,7 @@
 
 			// Prevent screen flicker when pane has been scrolled before expanding.
 			_.defer( function() {
-				var container = content.closest( '.wp-full-overlay-sidebar-content' ),
+				var container = content.closest( '.wp-full-overlay-sidebars-content' ),
 					currentScrollTop = container.scrollTop(),
 					previousScrollTop = content.data( 'previous-scrollTop' ) || 0,
 					expanded = construct.expanded();
@@ -1578,7 +1578,7 @@
 		 */
 		onChangeExpanded: function ( expanded, args ) {
 			var section = this,
-				container = section.headContainer.closest( '.wp-full-overlay-sidebar-content' ),
+				container = section.headContainer.closest( '.wp-full-overlay-sidebars-content' ),
 				content = section.contentContainer,
 				overlay = section.headContainer.closest( '.wp-full-overlay' ),
 				backBtn = content.find( '.customize-section-back' ),
@@ -2639,7 +2639,7 @@
 		/**
 		 * Class wp.customize.OuterSection.
 		 *
-		 * Creates section outside of the sidebar, there is no ui to trigger collapse/expand so
+		 * Creates section outside of the sidebars, there is no ui to trigger collapse/expand so
 		 * it would require custom handling.
 		 *
 		 * @constructs wp.customize.OuterSection
@@ -2670,7 +2670,7 @@
 		 */
 		onChangeExpanded: function( expanded, args ) {
 			var section = this,
-				container = section.headContainer.closest( '.wp-full-overlay-sidebar-content' ),
+				container = section.headContainer.closest( '.wp-full-overlay-sidebars-content' ),
 				content = section.contentContainer,
 				backBtn = content.find( '.customize-section-back' ),
 				sectionTitle = section.headContainer.find( '.accordion-section-title' ).first(),
@@ -2920,7 +2920,7 @@
 			var panel = this,
 				accordionSection = panel.contentContainer,
 				overlay = accordionSection.closest( '.wp-full-overlay' ),
-				container = accordionSection.closest( '.wp-full-overlay-sidebar-content' ),
+				container = accordionSection.closest( '.wp-full-overlay-sidebars-content' ),
 				topPanel = panel.headContainer.find( '.accordion-section-title' ),
 				backBtn = accordionSection.find( '.customize-panel-back' ),
 				childSections = panel.sections(),
@@ -5444,7 +5444,7 @@
 			controls = section.controls();
 			controlIndex = controls.indexOf( control );
 			if ( controls.length === controlIndex + 1 ) {
-				$( '#customize-footer-actions .collapse-sidebar' ).focus();
+				$( '#customize-footer-actions .collapse-sidebars' ).focus();
 			} else {
 				controls[ controlIndex + 1 ].container.find( ':focusable:first' ).focus();
 			}
@@ -7878,7 +7878,7 @@
 				api.notifications.render();
 			} ) );
 
-			sidebar = $( '.wp-full-overlay-sidebar-content' );
+			sidebar = $( '.wp-full-overlay-sidebars-content' );
 			api.notifications.bind( 'rendered', function updateSidebarTop() {
 				sidebar.css( 'top', '' );
 				if ( 0 !== api.notifications.count() ) {
@@ -8399,7 +8399,7 @@
 			event.preventDefault();
 		});
 
-		$( '.collapse-sidebar' ).on( 'click', function() {
+		$( '.collapse-sidebars' ).on( 'click', function() {
 			api.state( 'paneVisible' ).set( ! api.state( 'paneVisible' ).get() );
 		});
 
@@ -8409,9 +8409,9 @@
 			overlay.toggleClass( 'collapsed', ! paneVisible );
 
 			if ( ! paneVisible ) {
-				$( '.collapse-sidebar' ).attr({ 'aria-expanded': 'false', 'aria-label': api.l10n.expandSidebar });
+				$( '.collapse-sidebars' ).attr({ 'aria-expanded': 'false', 'aria-label': api.l10n.expandSidebar });
 			} else {
-				$( '.collapse-sidebar' ).attr({ 'aria-expanded': 'true', 'aria-label': api.l10n.collapseSidebar });
+				$( '.collapse-sidebars' ).attr({ 'aria-expanded': 'true', 'aria-label': api.l10n.collapseSidebar });
 			}
 		});
 
@@ -8481,7 +8481,7 @@
 		 * Sticky header feature.
 		 */
 		(function initStickyHeaders() {
-			var parentContainer = $( '.wp-full-overlay-sidebar-content' ),
+			var parentContainer = $( '.wp-full-overlay-sidebars-content' ),
 				changeContainer, updateHeaderHeight, releaseStickyHeader, resetStickyHeader, positionStickyHeader,
 				activeHeader, lastScrollTop;
 
@@ -8567,7 +8567,7 @@
 				}
 			}, 8 ) );
 
-			// Update header position on sidebar layout change.
+			// Update header position on sidebars layout change.
 			api.notifications.bind( 'sidebarTopUpdated', function() {
 				if ( activeHeader && activeHeader.element.hasClass( 'is-sticky' ) ) {
 					activeHeader.element.css( 'top', parentContainer.css( 'top' ) );

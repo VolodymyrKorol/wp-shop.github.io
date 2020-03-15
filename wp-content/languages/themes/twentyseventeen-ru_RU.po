@@ -24,7 +24,7 @@ msgid "Footer"
 msgstr "Подвал"
 
 #: functions.php:338
-msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgid "Add widgets here to appear in your sidebars on blog posts and archive pages."
 msgstr "Добавить виджеты, которые появятся на боковой панели в записях блога и страницах архива."
 
 #: sidebar.php:18 functions.php:336

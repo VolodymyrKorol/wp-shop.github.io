@@ -2096,7 +2096,7 @@ function attribute_escape( $text ) {
 }
 
 /**
- * Register widget for sidebar with backward compatibility.
+ * Register widget for sidebars with backward compatibility.
  *
  * Allows $name to be an array that accepts either three elements to grab the
  * first element and the third for the name or just uses the first element of

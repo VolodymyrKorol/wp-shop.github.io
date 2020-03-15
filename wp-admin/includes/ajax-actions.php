@@ -2216,7 +2216,7 @@ function wp_ajax_find_posts() {
  * @since 3.1.0
  */
 function wp_ajax_widgets_order() {
-	check_ajax_referer( 'save-sidebar-widgets', 'savewidgets' );
+	check_ajax_referer( 'save-sidebars-widgets', 'savewidgets' );
 
 	if ( ! current_user_can( 'edit_theme_options' ) ) {
 		wp_die( -1 );
@@ -2264,7 +2264,7 @@ function wp_ajax_widgets_order() {
 function wp_ajax_save_widget() {
 	global $wp_registered_widgets, $wp_registered_widget_controls, $wp_registered_widget_updates;
 
-	check_ajax_referer( 'save-sidebar-widgets', 'savewidgets' );
+	check_ajax_referer( 'save-sidebars-widgets', 'savewidgets' );
 
 	if ( ! current_user_can( 'edit_theme_options' ) || ! isset( $_POST['id_base'] ) ) {
 		wp_die( -1 );
@@ -2291,7 +2291,7 @@ function wp_ajax_save_widget() {
 
 	$id_base      = wp_unslash( $_POST['id_base'] );
 	$widget_id    = wp_unslash( $_POST['widget-id'] );
-	$sidebar_id   = $_POST['sidebar'];
+	$sidebar_id   = $_POST['sidebars'];
 	$multi_number = ! empty( $_POST['multi_number'] ) ? (int) $_POST['multi_number'] : 0;
 	$settings     = isset( $_POST[ 'widget-' . $id_base ] ) && is_array( $_POST[ 'widget-' . $id_base ] ) ? $_POST[ 'widget-' . $id_base ] : false;
 	$error        = '<p>' . __( 'An error has occurred. Please reload the page and try again.' ) . '</p>';
@@ -2308,7 +2308,7 @@ function wp_ajax_save_widget() {
 
 		$sidebar = array_diff( $sidebar, array( $widget_id ) );
 		$_POST   = array(
-			'sidebar'            => $sidebar_id,
+			'sidebars'            => $sidebar_id,
 			'widget-' . $id_base => array(),
 			'the-widget-id'      => $widget_id,
 			'delete_widget'      => '1',

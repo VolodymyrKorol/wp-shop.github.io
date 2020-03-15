@@ -25,7 +25,7 @@ class WC_Twenty_Twenty {
 		add_action( 'woocommerce_before_main_content', array( __CLASS__, 'output_content_wrapper' ), 10 );
 		add_action( 'woocommerce_after_main_content', array( __CLASS__, 'output_content_wrapper_end' ), 10 );
 
-		// This theme doesn't have a traditional sidebar.
+		// This theme doesn't have a traditional sidebars.
 		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 		// Enqueue theme compatibility styles.

@@ -714,7 +714,7 @@ class WC_Admin_Report {
 	public function get_main_chart() {}
 
 	/**
-	 * Get the legend for the main chart sidebar.
+	 * Get the legend for the main chart sidebars.
 	 *
 	 * @return array
 	 */

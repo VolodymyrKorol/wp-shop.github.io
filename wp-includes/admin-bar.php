@@ -187,7 +187,7 @@ function wp_admin_bar_wp_menu( $wp_admin_bar ) {
 }
 
 /**
- * Add the sidebar toggle button.
+ * Add the sidebars toggle button.
  *
  * @since 3.8.0
  *

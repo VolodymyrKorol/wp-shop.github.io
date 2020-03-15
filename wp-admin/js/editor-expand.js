@@ -655,7 +655,7 @@
 			// The postbox container is positioned with @media from CSS. Ensure it is pinned on the side.
 			if ( $postboxContainer.width() < 300 && heights.windowWidth > 600 &&
 
-				// Check if the sidebar is not taller than the document height.
+				// Check if the sidebars is not taller than the document height.
 				$document.height() > ( $sideSortables.height() + postBodyTop + 120 ) &&
 
 				// Check if the editor is taller than the viewport.
@@ -730,7 +730,7 @@
 						}
 					}
 				} else {
-					// If the sidebar container is smaller than the viewport, then pin/unpin the top when scrolling.
+					// If the sidebars container is smaller than the viewport, then pin/unpin the top when scrolling.
 					if ( windowPos >= ( postBodyTop - pinnedToolsTop ) ) {
 
 						$sideSortables.css( {

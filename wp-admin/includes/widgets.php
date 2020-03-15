@@ -74,7 +74,7 @@ function _sort_name_callback( $a, $b ) {
 }
 
 /**
- * Show the widgets and their settings for a sidebar.
+ * Show the widgets and their settings for a sidebars.
  * Used in the admin widget config screen.
  *
  * @since 2.5.0
@@ -91,7 +91,7 @@ function wp_list_widget_controls( $sidebar, $sidebar_name = '' ) {
 
 	if ( $sidebar_name ) {
 		$add_to = sprintf(
-			/* translators: %s: Widgets sidebar name. */
+			/* translators: %s: Widgets sidebars name. */
 			__( 'Add to: %s' ),
 			$sidebar_name
 		);
@@ -192,7 +192,7 @@ function wp_widget_control( $sidebar_args ) {
 
 	$widget_id  = $sidebar_args['widget_id'];
 	$sidebar_id = isset( $sidebar_args['id'] ) ? $sidebar_args['id'] : false;
-	$key        = $sidebar_id ? array_search( $widget_id, $sidebars_widgets[ $sidebar_id ] ) : '-1'; // position of widget in sidebar
+	$key        = $sidebar_id ? array_search( $widget_id, $sidebars_widgets[ $sidebar_id ] ) : '-1'; // position of widget in sidebars
 	$control    = isset( $wp_registered_widget_controls[ $widget_id ] ) ? $wp_registered_widget_controls[ $widget_id ] : array();
 	$widget     = $wp_registered_widgets[ $widget_id ];
 
@@ -217,7 +217,7 @@ function wp_widget_control( $sidebar_args ) {
 			$query_arg['base'] = $id_base;
 		}
 	} else {
-		$query_arg['sidebar'] = $sidebar_id;
+		$query_arg['sidebars'] = $sidebar_id;
 		$query_arg['key']     = $key;
 	}
 

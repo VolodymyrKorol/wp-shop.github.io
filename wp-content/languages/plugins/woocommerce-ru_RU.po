@@ -8332,7 +8332,7 @@ msgid "Move &#8220;%s&#8221; to the Trash"
 msgstr "Удалить &#8220;%s&#8221; в корзину"
 
 #: includes/admin/class-wc-admin-attributes.php:377
-msgid "Attributes let you define extra product data, such as size or color. You can use these attributes in the shop sidebar using the \"layered nav\" widgets."
+msgid "Attributes let you define extra product data, such as size or color. You can use these attributes in the shop sidebars using the \"layered nav\" widgets."
 msgstr "Атрибуты позволяют определять дополнительные сведения о товаре, такие как размер и цвет. Эти атрибуты можно использовать на боковой панели магазина с помощью виджетов layered nav."
 
 #: includes/admin/class-wc-admin-attributes.php:249

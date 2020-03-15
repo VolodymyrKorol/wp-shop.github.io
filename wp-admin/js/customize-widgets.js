@@ -108,7 +108,7 @@
 	/**
 	 * wp.customize.Widgets.SidebarModel
 	 *
-	 * A single sidebar model.
+	 * A single sidebars model.
 	 *
 	 * @class    wp.customize.Widgets.SidebarModel
 	 * @augments Backbone.Model
@@ -128,7 +128,7 @@
 	/**
 	 * wp.customize.Widgets.SidebarCollection
 	 *
-	 * Collection for sidebar models.
+	 * Collection for sidebars models.
 	 *
 	 * @class    wp.customize.Widgets.SidebarCollection
 	 * @augments Backbone.Collection
@@ -153,7 +153,7 @@
 		// Cache current selected widget
 		selected: null,
 
-		// Cache sidebar control which has opened panel
+		// Cache sidebars control which has opened panel
 		currentSidebarControl: null,
 		$search: null,
 		$clearResults: null,
@@ -310,7 +310,7 @@
 		},
 
 		/**
-		 * Adds a selected widget to the sidebar.
+		 * Adds a selected widget to the sidebars.
  		 */
 		submit: function( widgetTpl ) {
 			var widgetId, widget, widgetFormControl;
@@ -602,7 +602,7 @@
 		_setupModel: function() {
 			var self = this, rememberSavedWidgetId;
 
-			// Remember saved widgets so we know which to trash (move to inactive widgets sidebar)
+			// Remember saved widgets so we know which to trash (move to inactive widgets sidebars)
 			rememberSavedWidgetId = function() {
 				api.Widgets.savedWidgetIds[self.params.widget_id] = true;
 			};
@@ -634,7 +634,7 @@
 
 			$widgetInside = this.container.find( '.widget-inside' );
 			$widgetForm = $widgetInside.find( '> .form' );
-			$customizeSidebar = $( '.wp-full-overlay-sidebar-content:first' );
+			$customizeSidebar = $( '.wp-full-overlay-sidebars-content:first' );
 			this.container.addClass( 'wide-widget-control' );
 
 			this.container.find( '.form:first' ).css( {
@@ -680,7 +680,7 @@
 				$themeControlsContainer.off( 'expanded collapsed', positionWidget );
 			} );
 
-			// Reposition whenever a sidebar's widgets are changed
+			// Reposition whenever a sidebars's widgets are changed
 			api.each( function( setting ) {
 				if ( 0 === setting.id.indexOf( 'sidebars_widgets[' ) ) {
 					setting.bind( function() {
@@ -743,7 +743,7 @@
 				$reorderNav, updateAvailableSidebars, template;
 
 			/**
-			 * select the provided sidebar list item in the move widget area
+			 * select the provided sidebars list item in the move widget area
 			 *
 			 * @param {jQuery} li
 			 */
@@ -843,7 +843,7 @@
 			} );
 
 			/**
-			 * Handle selecting a sidebar to move to
+			 * Handle selecting a sidebars to move to
 			 */
 			this.container.find( '.widget-area-select' ).on( 'click keypress', 'li', function( event ) {
 				if ( event.type === 'keypress' && ( event.which !== 13 && event.which !== 32 ) ) {
@@ -854,7 +854,7 @@
 			} );
 
 			/**
-			 * Move widget to another sidebar
+			 * Move widget to another sidebars
 			 */
 			this.container.find( '.move-widget-btn' ).click( function() {
 				self.getSidebarWidgetsControl().toggleReordering( false );
@@ -1493,7 +1493,7 @@
 		},
 
 		/**
-		 * Get the position (index) of the widget in the containing sidebar
+		 * Get the position (index) of the widget in the containing sidebars
 		 *
 		 * @returns {Number}
 		 */
@@ -1511,14 +1511,14 @@
 		},
 
 		/**
-		 * Move widget up one in the sidebar
+		 * Move widget up one in the sidebars
 		 */
 		moveUp: function() {
 			this._moveWidgetByOne( -1 );
 		},
 
 		/**
-		 * Move widget up one in the sidebar
+		 * Move widget up one in the sidebars
 		 */
 		moveDown: function() {
 			this._moveWidgetByOne( 1 );
@@ -1558,7 +1558,7 @@
 			}
 
 			if ( showOrHide ) {
-				// reset the selected sidebar
+				// reset the selected sidebars
 				$moveWidgetArea.find( '.selected' ).removeClass( 'selected' );
 
 				$moveWidgetArea.find( 'li' ).filter( function() {
@@ -1627,7 +1627,7 @@
 				/**
 				 * Get the number of active sections in the panel.
 				 *
-				 * @return {number} Number of active sidebar sections.
+				 * @return {number} Number of active sidebars sections.
 				 */
 				getActiveSectionCount = function() {
 					return _.filter( panel.sections(), function( section ) {
@@ -1811,12 +1811,12 @@
 					control.section( self.section() );
 					priority += 1;
 				});
-				self.priority( priority ); // Make sure sidebar control remains at end
+				self.priority( priority ); // Make sure sidebars control remains at end
 
 				// Re-sort widget form controls (including widgets form other sidebars newly moved here)
 				self._applyCardinalOrderClassNames();
 
-				// If the widget was dragged into the sidebar, make sure the sidebar_id param is updated
+				// If the widget was dragged into the sidebars, make sure the sidebar_id param is updated
 				_( widgetFormControls ).each( function( widgetFormControl ) {
 					widgetFormControl.params.sidebar_id = self.params.sidebar_id;
 				} );
@@ -1824,12 +1824,12 @@
 				// Cleanup after widget removal
 				_( removedWidgetIds ).each( function( removedWidgetId ) {
 
-					// Using setTimeout so that when moving a widget to another sidebar, the other sidebars_widgets settings get a chance to update
+					// Using setTimeout so that when moving a widget to another sidebars, the other sidebars_widgets settings get a chance to update
 					setTimeout( function() {
 						var removedControl, wasDraggedToAnotherSidebar, inactiveWidgets, removedIdBase,
 							widget, isPresentInAnotherSidebar = false;
 
-						// Check if the widget is in another sidebar
+						// Check if the widget is in another sidebars
 						api.each( function( otherSetting ) {
 							if ( otherSetting.id === self.setting.id || 0 !== otherSetting.id.indexOf( 'sidebars_widgets[' ) || otherSetting.id === 'sidebars_widgets[wp_inactive_widgets]' ) {
 								return;
@@ -1843,14 +1843,14 @@
 							}
 						} );
 
-						// If the widget is present in another sidebar, abort!
+						// If the widget is present in another sidebars, abort!
 						if ( isPresentInAnotherSidebar ) {
 							return;
 						}
 
 						removedControl = api.Widgets.getWidgetFormControlForWidget( removedWidgetId );
 
-						// Detect if widget control was dragged to another sidebar
+						// Detect if widget control was dragged to another sidebars
 						wasDraggedToAnotherSidebar = removedControl && $.contains( document, removedControl.container[0] ) && ! $.contains( self.$sectionContent[0], removedControl.container[0] );
 
 						// Delete any widget form controls for removed widgets
@@ -1859,8 +1859,8 @@
 							removedControl.container.remove();
 						}
 
-						// Move widget to inactive widgets sidebar (move it to trash) if has been previously saved
-						// This prevents the inactive widgets sidebar from overflowing with throwaway widgets
+						// Move widget to inactive widgets sidebars (move it to trash) if has been previously saved
+						// This prevents the inactive widgets sidebars from overflowing with throwaway widgets
 						if ( api.Widgets.savedWidgetIds[removedWidgetId] ) {
 							inactiveWidgets = api.value( 'sidebars_widgets[wp_inactive_widgets]' )().slice();
 							inactiveWidgets.push( removedWidgetId );
@@ -1880,7 +1880,7 @@
 		},
 
 		/**
-		 * Allow widgets in sidebar to be re-ordered, and for the order to be previewed
+		 * Allow widgets in sidebars to be re-ordered, and for the order to be previewed
 		 */
 		_setupSortable: function() {
 			var self = this;
@@ -1908,7 +1908,7 @@
 			} );
 
 			/**
-			 * Expand other Customizer sidebar section when dragging a control widget over it,
+			 * Expand other Customizer sidebars section when dragging a control widget over it,
 			 * allowing the control to be dropped into another section
 			 */
 			this.$controlSection.find( '.accordion-section-title' ).droppable({
@@ -2040,7 +2040,7 @@
 		},
 
 		/**
-		 * Get the widget_form Customize controls associated with the current sidebar.
+		 * Get the widget_form Customize controls associated with the current sidebars.
 		 *
 		 * @since 3.9.0
 		 * @return {wp.customize.controlConstructor.widget_form[]}
@@ -2166,7 +2166,7 @@
 				}
 			} );
 
-			// Add widget to this sidebar
+			// Add widget to this sidebars
 			sidebarWidgets = this.setting().slice();
 			if ( -1 === _.indexOf( sidebarWidgets, widgetId ) ) {
 				sidebarWidgets.push( widgetId );
@@ -2240,7 +2240,7 @@
 	},
 
 	/**
-	 * Given a widget control, find the sidebar widgets control that contains it.
+	 * Given a widget control, find the sidebars widgets control that contains it.
 	 * @param {string} widgetId
 	 * @return {object|null}
 	 */

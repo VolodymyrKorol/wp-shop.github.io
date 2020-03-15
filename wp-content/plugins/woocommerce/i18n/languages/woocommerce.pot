@@ -7360,7 +7360,7 @@ msgstr ""
 #: includes/admin/class-wc-admin-attributes.php:377
 msgid ""
 "Attributes let you define extra product data, such as size or color. You "
-"can use these attributes in the shop sidebar using the \"layered nav\" "
+"can use these attributes in the shop sidebars using the \"layered nav\" "
 "widgets."
 msgstr ""
 

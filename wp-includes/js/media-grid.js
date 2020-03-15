@@ -423,7 +423,7 @@ Manage = MediaFrame.extend(/** @lends wp.media.view.MediaFrame.Manage.prototype 
 	},
 
 	sidebarVisibility: function() {
-		this.browserView.$( '.media-sidebar' ).toggle( !! this.errors.length );
+		this.browserView.$( '.media-sidebars' ).toggle( !! this.errors.length );
 	},
 
 	bindDeferred: function() {

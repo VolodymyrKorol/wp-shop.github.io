@@ -1,0 +1,12 @@
+2020-03-12T19:31:24+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\template-parts\product\product-panel.php:7
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template.php(724): require()
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template.php(671): load_template('D:\\programFiles...', false)
+#2 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\general-template.php(168): locate_template(Array, true, false)
+#3 D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\page.php(24): get_template_part('template-parts/...', 'panel')
+#4 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include('D:\\programFiles...')
+#5 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#6 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#7 {main}
+  thrown в D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\template-parts\product\product-panel.php на строке 7
+

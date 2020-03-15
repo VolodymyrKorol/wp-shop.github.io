@@ -1391,7 +1391,7 @@ GalleryEdit = Library.extend(/** @lends wp.media.controller.GalleryEdit.prototyp
 	},
 
 	/**
-	 * Adds the gallery settings to the sidebar and adds a reverse button to the
+	 * Adds the gallery settings to the sidebars and adds a reverse button to the
 	 * toolbar.
 	 *
 	 * @since 3.5.0
@@ -1664,7 +1664,7 @@ CollectionEdit = Library.extend(/** @lends wp.media.controller.CollectionEdit.pr
 	},
 
 	/**
-	 * Render the collection embed settings view in the browser sidebar.
+	 * Render the collection embed settings view in the browser sidebars.
 	 *
 	 * @todo This is against the pattern elsewhere in media. Typically the frame
 	 *       is responsible for adding region mode callbacks. Explain.
@@ -6484,7 +6484,7 @@ module.exports = Router;
  * @augments Backbone.View
  */
 var Sidebar = wp.media.view.PriorityList.extend(/** @lends wp.media.view.Sidebar.prototype */{
-	className: 'media-sidebar'
+	className: 'media-sidebars'
 });
 
 module.exports = Sidebar;
@@ -7279,7 +7279,7 @@ Attachments = View.extend(/** @lends wp.media.view.Attachments.prototype */{
 	 * Restores focus to the selected item in the collection.
 	 *
 	 * Moves focus back to the first selected attachment in the grid. Used when
-	 * tabbing backwards from the attachment details sidebar.
+	 * tabbing backwards from the attachment details sidebars.
 	 * See media.view.AttachmentsBrowser.
 	 *
 	 * @since 4.0.0
@@ -7989,8 +7989,8 @@ var View = wp.media.View,
  * @param {boolean}        [options.date=true]     Whether to show the date filter in the
  *                                                 browser's toolbar.
  * @param {boolean}        [options.display=false] Whether to show the attachments display settings
- *                                                 view in the sidebar.
- * @param {boolean|string} [options.sidebar=true]  Whether to create a sidebar for the browser.
+ *                                                 view in the sidebars.
+ * @param {boolean|string} [options.sidebars=true]  Whether to create a sidebars for the browser.
  *                                                 Accepts true, false, and 'errors'.
  */
 AttachmentsBrowser = View.extend(/** @lends wp.media.view.AttachmentsBrowser.prototype */{
@@ -8010,7 +8010,7 @@ AttachmentsBrowser = View.extend(/** @lends wp.media.view.AttachmentsBrowser.pro
 		this.controller.on( 'toggle:upload:attachment', this.toggleUploader, this );
 		this.controller.on( 'edit:selection', this.editSelection );
 
-		// In the Media Library, the sidebar is used to display errors before the attachments grid.
+		// In the Media Library, the sidebars is used to display errors before the attachments grid.
 		if ( this.options.sidebar && 'errors' === this.options.sidebar ) {
 			this.createSidebar();
 		}
@@ -8034,7 +8034,7 @@ AttachmentsBrowser = View.extend(/** @lends wp.media.view.AttachmentsBrowser.pro
 		// Create the list of attachments.
 		this.createAttachments();
 
-		// For accessibility reasons, place the normal sidebar after the attachments, see ticket #36909.
+		// For accessibility reasons, place the normal sidebars after the attachments, see ticket #36909.
 		if ( this.options.sidebar && 'errors' !== this.options.sidebar ) {
 			this.createSidebar();
 		}
@@ -8042,10 +8042,10 @@ AttachmentsBrowser = View.extend(/** @lends wp.media.view.AttachmentsBrowser.pro
 		this.updateContent();
 
 		if ( ! this.options.sidebar || 'errors' === this.options.sidebar ) {
-			this.$el.addClass( 'hide-sidebar' );
+			this.$el.addClass( 'hide-sidebars' );
 
 			if ( 'errors' === this.options.sidebar ) {
-				this.$el.addClass( 'sidebar-for-errors' );
+				this.$el.addClass( 'sidebars-for-errors' );
 			}
 		}
 
@@ -8483,7 +8483,7 @@ AttachmentsBrowser = View.extend(/** @lends wp.media.view.AttachmentsBrowser.pro
 			}) );
 		}
 
-		// Show the sidebar on mobile
+		// Show the sidebars on mobile
 		if ( this.model.id === 'insert' ) {
 			sidebar.$el.addClass( 'visible' );
 		}
@@ -8494,7 +8494,7 @@ AttachmentsBrowser = View.extend(/** @lends wp.media.view.AttachmentsBrowser.pro
 		sidebar.unset('details');
 		sidebar.unset('compat');
 		sidebar.unset('display');
-		// Hide the sidebar on mobile
+		// Hide the sidebars on mobile
 		sidebar.$el.removeClass( 'visible' );
 	}
 });

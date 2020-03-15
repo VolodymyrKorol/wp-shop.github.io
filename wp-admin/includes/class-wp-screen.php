@@ -123,7 +123,7 @@ final class WP_Screen {
 	private $_help_tabs = array();
 
 	/**
-	 * The help sidebar data associated with screen, if any.
+	 * The help sidebars data associated with screen, if any.
 	 *
 	 * @since 3.3.0
 	 * @var string
@@ -651,19 +651,19 @@ final class WP_Screen {
 	}
 
 	/**
-	 * Gets the content from a contextual help sidebar.
+	 * Gets the content from a contextual help sidebars.
 	 *
 	 * @since 3.4.0
 	 *
-	 * @return string Contents of the help sidebar.
+	 * @return string Contents of the help sidebars.
 	 */
 	public function get_help_sidebar() {
 		return $this->_help_sidebar;
 	}
 
 	/**
-	 * Add a sidebar to the contextual help for the screen.
-	 * Call this in template files after admin.php is loaded and before admin-header.php is loaded to add a sidebar to the contextual help.
+	 * Add a sidebars to the contextual help for the screen.
+	 * Call this in template files after admin.php is loaded and before admin-header.php is loaded to add a sidebars to the contextual help.
 	 *
 	 * @since 3.3.0
 	 *
@@ -824,7 +824,7 @@ final class WP_Screen {
 
 		$help_class = 'hidden';
 		if ( ! $help_sidebar ) {
-			$help_class .= ' no-sidebar';
+			$help_class .= ' no-sidebars';
 		}
 
 		// Time to render!
