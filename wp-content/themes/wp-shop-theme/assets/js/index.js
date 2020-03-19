@@ -1,3 +1,4 @@
+
 /**
  * Фильтр на главной странице
  */
@@ -22,7 +23,6 @@ jQuery('.img-arrow').on('click', (e)=>{
     order = img.getAttribute("data-order")
     jQuery('.sidebar-item__content[data-order="'+ order +'"]').toggleClass('sidebar-item-opened');
     const height = jQuery('.sidebar-item__content[data-order="'+ order +'"]').offsetHeight;
-    console.log(height);
     jQuery('.img-arrow[data-order="'+order+'"]').toggleClass('img-arrow-active');
 
 })

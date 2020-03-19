@@ -20,7 +20,7 @@ $loop = new WP_Query(array(
     <div class="content-container">
         <div class="shop-wrap">
             <?php
-            while ($loop->have_posts()): $loop->the_post(); ?>
+            while ($loop->have_posts()): $loop->the_post() ?>
 
                 <div class="shop__item">
                     <div class="shop__item-properties">

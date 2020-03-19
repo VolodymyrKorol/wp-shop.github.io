@@ -8,8 +8,9 @@ $loop = new WP_Query(array(
 ?>
 
 <div class="product-panel page-item">
-        <div class="shop">
-                <div class="shop-wrap">
+    <div class="load-line"></div>
+    <div class="shop">
+            <div class="shop-wrap">
                     <?php
                     while ($loop->have_posts()): $loop->the_post(); ?>
 

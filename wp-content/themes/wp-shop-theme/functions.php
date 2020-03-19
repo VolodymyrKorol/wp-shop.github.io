@@ -57,6 +57,7 @@ function footerScriptsConnect()
     wp_enqueue_script('wp-shop-index', get_template_directory_uri() . "/assets/js/index.js");
     wp_enqueue_script('wp-shop-bootstrap-popper', "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js");
     wp_enqueue_script('wp-shop-bootstrap-js', "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js");
+    wp_enqueue_script('wp-shop-ajax-filter-js', get_template_directory_uri()."/assets/js/ajax.js");
 }
 
 /*********************************************************

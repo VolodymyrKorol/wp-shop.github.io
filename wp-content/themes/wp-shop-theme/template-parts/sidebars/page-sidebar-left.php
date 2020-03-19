@@ -1,6 +1,9 @@
 <div class="sidebar">
     <div class="sidebar-container page-item">
+        <div class="sidebar-btns">
         <button class="all-items">All products</button>
+        <button type="button" id="showProds">Show</button>
+        </div>
         <div class="sidebar-item">
             <div class="sidebar-item__title">
                 <p>Price</p>
@@ -9,8 +12,8 @@
             <div class="sidebar-item__content" data-order="1">
                 <form action="#" method="post" id="price-filter">
                 <div class="sidebar-item__content-row">
-                    <p><span>from</span> <input type="number"> uan.</p>
-                    <p><span>to</span> <input type="number"> uan.</p>
+                    <p><span>from</span> <input id="fromPrice" type="number"> uan.</p>
+                    <p><span>to</span> <input id="toPrice" type="number"> uan.</p>
                 </div>
                 <div class="sidebar-item__content-row">
                     <input class="range-input" type="range" min="0" max="10000">
