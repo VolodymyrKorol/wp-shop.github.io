@@ -205,6 +205,9 @@ body {
   background-size: 16px;
   border: 2px solid #aa9b77; }
 
+.checkbox-container {
+  display: flex; }
+
 /*-----------Sidebar-top--------------------*/
 .shop {
   margin-top: 135px; }

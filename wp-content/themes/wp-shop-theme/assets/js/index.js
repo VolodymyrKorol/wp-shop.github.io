@@ -4,7 +4,6 @@
  */
 jQuery('.check-box').on('click', (e) => {
     e.target.classList.toggle('checkbox-checked')
-    console.log(e.target.children[0].value)
 })
 
 
@@ -40,5 +39,22 @@ jQuery('.burger').on('click',(e)=>{
     }else {
         jQuery("html,body").css("overflow", "scroll");
         opened = !opened
+    }
+})
+
+
+/**
+ * Checkbox toggle
+ * @type {jQuery}
+ */
+jQuery('.checkbox-container').on('click', (e)=>{
+    let inpSpan = jQuery(e.target)
+    let cat = inpSpan.attr('data-cat-type')
+    let inp = jQuery('input[data-cat-type="'+ cat +'"]')
+    if(inp.attr("checked")) {
+        inp.removeAttr("checked")
+    }
+    else {
+        inp.attr("checked",'checked')
     }
 })

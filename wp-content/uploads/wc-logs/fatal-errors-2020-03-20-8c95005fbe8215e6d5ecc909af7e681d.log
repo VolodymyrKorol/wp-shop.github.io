@@ -1,0 +1,58 @@
+2020-03-20T17:06:46+00:00 CRITICAL Uncaught Error: Call to undefined function json_dencode() in D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php:11
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include()
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#2 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#3 {main}
+  thrown в D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php на строке 11
+
+2020-03-20T19:11:22+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on null in D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\templates\loop\price.php:25
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(249): include()
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1284): wc_get_template('loop/price.php')
+#2 D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php(44): woocommerce_template_loop_price()
+#3 D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php(104): post_echo(Object(WP_Query))
+#4 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include('D:\\programFiles...')
+#5 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#6 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#7 {m в D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\templates\loop\price.php на строке 25
+
+2020-03-20T19:15:29+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on null in D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\templates\loop\price.php:25
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(249): include()
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1284): wc_get_template('loop/price.php')
+#2 D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php(44): woocommerce_template_loop_price()
+#3 D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php(104): post_echo(Object(WP_Query))
+#4 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include('D:\\programFiles...')
+#5 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#6 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#7 {m в D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\templates\loop\price.php на строке 25
+
+2020-03-20T19:23:59+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on null in D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\templates\loop\price.php:25
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\includes\wc-core-functions.php(249): include()
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1284): wc_get_template('loop/price.php')
+#2 D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php(44): woocommerce_template_loop_price()
+#3 D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php(100): post_echo(Object(WP_Query))
+#4 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include('D:\\programFiles...')
+#5 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#6 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#7 {m в D:\programFiles\OSPanel\domains\wp-shop\wp-content\plugins\woocommerce\templates\loop\price.php на строке 25
+
+2020-03-20T19:35:12+00:00 CRITICAL Uncaught Error: Class 'get_posts' not found in D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php:100
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include()
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#2 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#3 {main}
+  thrown в D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php на строке 100
+
+2020-03-20T19:35:33+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on array in D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php:26
+Stack trace:
+#0 D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php(101): post_echo(Array)
+#1 D:\programFiles\OSPanel\domains\wp-shop\wp-includes\template-loader.php(98): include('D:\\programFiles...')
+#2 D:\programFiles\OSPanel\domains\wp-shop\wp-blog-header.php(19): require_once('D:\\programFiles...')
+#3 D:\programFiles\OSPanel\domains\wp-shop\index.php(17): require('D:\\programFiles...')
+#4 {main}
+  thrown в D:\programFiles\OSPanel\domains\wp-shop\wp-content\themes\wp-shop-theme\func\filterAjax.php на строке 26
+

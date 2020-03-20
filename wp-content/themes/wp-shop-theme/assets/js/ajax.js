@@ -5,13 +5,22 @@ jQuery('#showProds').on('click',()=>{
 
     let fromPrice = jQuery('#fromPrice').val();
     let toPrice = jQuery('#toPrice').val();
+    let male = jQuery('#male').is(':checked');
+    let data = {};
+    let categories='';
 
+    jQuery('#gender_filter').find ('input').each(function() {
+        data[this.getAttribute('data-cat-type')] = jQuery(this).attr('checked')=='checked'? true: false
+        categories = JSON.stringify(data)
+    })
+    console.log(categories)
     jQuery.ajax({
         url: 'http://wp-shop/ajaxfilter',
         type: 'POST',
         cache: false,
         data: {'fromPrice':fromPrice,
-               'toPrice':toPrice
+               'toPrice':toPrice,
+               'categories': categories
         },
         dataType: 'html',
         beforeSend:()=>{
